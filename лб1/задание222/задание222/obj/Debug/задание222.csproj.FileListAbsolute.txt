@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\задание222\задание222\bin\Debug\задание222.exe.config
+C:\Users\User\source\repos\задание222\задание222\bin\Debug\задание222.exe
+C:\Users\User\source\repos\задание222\задание222\bin\Debug\задание222.pdb
+C:\Users\User\source\repos\задание222\задание222\obj\Debug\задание222.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\задание222\задание222\obj\Debug\задание222.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\задание222\задание222\obj\Debug\задание222.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\задание222\задание222\obj\Debug\задание222.exe
+C:\Users\User\source\repos\задание222\задание222\obj\Debug\задание222.pdb
+E:\C#\задание222\задание222\obj\Debug\задание222.exe
+E:\C#\задание222\задание222\obj\Debug\задание222.pdb

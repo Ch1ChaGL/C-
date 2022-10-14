@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\лб2_2\лб2_2\bin\Debug\лб2_2.exe.config
+C:\Users\User\source\repos\лб2_2\лб2_2\bin\Debug\лб2_2.exe
+C:\Users\User\source\repos\лб2_2\лб2_2\bin\Debug\лб2_2.pdb
+C:\Users\User\source\repos\лб2_2\лб2_2\obj\Debug\лб2_2.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\лб2_2\лб2_2\obj\Debug\лб2_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\лб2_2\лб2_2\obj\Debug\лб2_2.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\лб2_2\лб2_2\obj\Debug\лб2_2.exe
+C:\Users\User\source\repos\лб2_2\лб2_2\obj\Debug\лб2_2.pdb
