@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\лб4\лб4\bin\Debug\лб4.exe.config
+C:\Users\User\source\repos\лб4\лб4\bin\Debug\лб4.exe
+C:\Users\User\source\repos\лб4\лб4\bin\Debug\лб4.pdb
+C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.exe
+C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.pdb
