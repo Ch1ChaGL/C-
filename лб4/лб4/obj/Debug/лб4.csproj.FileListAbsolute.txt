@@ -6,3 +6,11 @@ C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.csproj.SuggestedBindingRe
 C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.exe
 C:\Users\User\source\repos\лб4\лб4\obj\Debug\лб4.pdb
+E:\C#\лб4\лб4\bin\Debug\лб4.exe.config
+E:\C#\лб4\лб4\bin\Debug\лб4.exe
+E:\C#\лб4\лб4\bin\Debug\лб4.pdb
+E:\C#\лб4\лб4\obj\Debug\лб4.csproj.CoreCompileInputs.cache
+E:\C#\лб4\лб4\obj\Debug\лб4.exe
+E:\C#\лб4\лб4\obj\Debug\лб4.pdb
+E:\C#\лб4\лб4\obj\Debug\лб4.csproj.AssemblyReference.cache
+E:\C#\лб4\лб4\obj\Debug\лб4.csproj.SuggestedBindingRedirects.cache

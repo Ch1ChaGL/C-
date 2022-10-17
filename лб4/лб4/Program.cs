@@ -20,17 +20,17 @@ namespace лб4
     {
         
 
-        static double NOD(out double GCD)
+        static int NOD(int a,int b)
         {
-            double a, b;
-            Console.WriteLine("Введите два числа для нахождения НОД");
-            a = double.Parse(Console.ReadLine());
-            b = double.Parse(Console.ReadLine());
+            //double a, b;
+            //Console.WriteLine("Введите два числа для нахождения НОД");
+            //a = double.Parse(Console.ReadLine());
+            //b = double.Parse(Console.ReadLine());
             try
             {
                 while (a != 0 && b != 0)
                 {
-                    if (a > b)
+                    if (a > b)                                  //Функция нахождения нод
                     {
                         a = a % b;
                     }
@@ -39,23 +39,24 @@ namespace лб4
                         b = b % a;
                     }
                 }
-                GCD = a + b;
-                return 1;
+                return  a + b;
+               
             }catch(Exception)
             {
-                GCD = 0;
-                return -1;
+                
+                return 0;
+              
             }
 
 
         } //Задание 1
-        static double MyArray(ref double result,params double[] Arr1)
+        static double MyArray(ref double result,params double[] Arr1)           //Функция ввода массива и присвоения максимального числа нечетных чисел 
         {   double sum=0;
             //Random rnd = new Random();
             for(int i = 0; i < Arr1.Length; i++)
             {
                 Console.WriteLine("Введите элемент массива");
-                Arr1[i] = int.Parse(Console.ReadLine());
+                Arr1[i] = int.Parse(Console.ReadLine());                    
 
             }
             Console.WriteLine();
@@ -70,7 +71,39 @@ namespace лб4
             result = sum;
             return 0;
         }
-        static void change(params double[] Arr1)
+
+
+        static double Fill_Array(params double[] Ar1)
+        {   
+
+            for(int i = 0; i < Ar1.Length; i++)
+            {
+                Ar1[i] = int.Parse(Console.ReadLine());
+            }
+            return 0;
+        }
+        static void Show_List(params double[] Ar1) {
+            for(int i = 0; i < Ar1.Length; i++)
+            {
+                Console.Write(Ar1[i] + "\t");
+            }
+        }
+        static double Max_odd(params double[] Ar1)
+        {
+            double sum = 0;
+            for (int i = 0; i < Ar1.Length; i++)
+            {
+                Console.WriteLine(Ar1[i] + "\t");
+                if (Ar1[i] % 2 != 0)
+                {
+                    sum = sum + Ar1[i];
+                }
+            }
+            return sum;
+        }
+
+
+        static void change(params double[] Arr1)                        //Функция присвоения минимальному числу максимального и наоборот
         {
             double min = double.MaxValue;
             double max = double.MinValue;
@@ -98,44 +131,55 @@ namespace лб4
                     Arr1[i] = min;
                 }
                 
-            }
-            for (int i = 0; i < Arr1.Length; i++)
-            {
-                Console.WriteLine(Arr1[i]+"\t");
-            }
-
-
+            }           
         }
         static void Main(string[] args)
         {
            
-            double answer1=0,answer2=0;
+            int num1, num2;
             double[] MyArr1 = new double[4];
             double[] MyArr2 = new double[6];
-            double Num1, Num2,ans;
+            
+            double ans;
             try
-            {           
-                NOD(out ans);
-                Console.WriteLine("НОД чисeл  = " + ans);
-            }catch(Exception ex)
             {
+                Console.WriteLine("Введите 1 число");
+                num1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите 2 число");
+                num2 = int.Parse(Console.ReadLine());              
+                Console.WriteLine("НОД чисeл  = " + NOD(num1, num2));
+            }catch(Exception ex)
+            {                                       
                 Console.WriteLine(ex.Message);
             }
 
-            MyArray(ref answer1,MyArr1);
-            MyArray(ref answer2,MyArr2);
-            Console.WriteLine("Сумма нечетных чисел 1 массива = "+answer1);
-            Console.WriteLine("Сумма нечетных чисел 2 массива = " + answer2);
-            if (answer1 > answer2)
+            Console.WriteLine("Введите 1 массив");
+            Fill_Array(MyArr1);
+            Console.WriteLine("Введите 2 массив");
+            Fill_Array(MyArr2);
+            //MyArray(ref answer1,MyArr1);
+            //MyArray(ref answer2,MyArr2);
+            //Console.WriteLine("Сумма нечетных чисел 1 массива = "+answer1);
+            //Console.WriteLine("Сумма нечетных чисел 2 массива = " + answer2);
+            if (Max_odd(MyArr1) > Max_odd(MyArr2))  // Проверка максимального количества нечетных
             {
                 change(MyArr1);
+                Show_List(MyArr1);
             }
             else
             {
                 change(MyArr2);
+                Show_List(MyArr2);
             }
+
+           
+
+
 
             Console.ReadKey();
         }
     }
 }
+
+
+
