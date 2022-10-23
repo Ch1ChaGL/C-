@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\ООП5\ООП5\obj\Debug\ООП5.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\ООП5\ООП5\obj\Debug\ООП5.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\ООП5\ООП5\obj\Debug\ООП5.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ООП5\ООП5\bin\Debug\ООП5.exe.config
+C:\Users\User\source\repos\ООП5\ООП5\bin\Debug\ООП5.exe
+C:\Users\User\source\repos\ООП5\ООП5\bin\Debug\ООП5.pdb
+C:\Users\User\source\repos\ООП5\ООП5\obj\Debug\ООП5.exe
+C:\Users\User\source\repos\ООП5\ООП5\obj\Debug\ООП5.pdb
