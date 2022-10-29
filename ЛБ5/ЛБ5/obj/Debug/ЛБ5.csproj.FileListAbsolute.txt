@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\ЛБ5\ЛБ5\bin\Debug\ЛБ5.exe.config
+C:\Users\User\source\repos\ЛБ5\ЛБ5\bin\Debug\ЛБ5.exe
+C:\Users\User\source\repos\ЛБ5\ЛБ5\bin\Debug\ЛБ5.pdb
+C:\Users\User\source\repos\ЛБ5\ЛБ5\obj\Debug\ЛБ5.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\ЛБ5\ЛБ5\obj\Debug\ЛБ5.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\ЛБ5\ЛБ5\obj\Debug\ЛБ5.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ЛБ5\ЛБ5\obj\Debug\ЛБ5.exe
+C:\Users\User\source\repos\ЛБ5\ЛБ5\obj\Debug\ЛБ5.pdb
