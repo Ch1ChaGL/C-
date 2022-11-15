@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,7 @@ namespace _3._1
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -29,12 +30,14 @@ namespace _3._1
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-
+           // int width = Cursor.Position.X;
+            //int height = Cursor.Position.Y + 50;
+            //button1.Size = new Size(width, height);
             //Cursor.Position = new Point(button1.Width, button1.Height);
             //int width = Cursor.Position.X;
             //int height = Cursor.Position.Y;
             //button1.SetBounds(0, 0, width, height);
-           
+
 
 
         }
@@ -74,7 +77,9 @@ namespace _3._1
         }
 
         private void button1_MouseMove(object sender, MouseEventArgs e)
-        {
+        {   int width = Cursor.Position.X+20;
+            int height = Cursor.Position.Y;
+            button1.Size = new Size(width, height) ;
             //button1.Width = Cursor.Position.X;
            // button1.Height = Cursor.Position.Y;
         }
@@ -86,7 +91,7 @@ namespace _3._1
 
         private void button1_MouseUp(object sender, MouseEventArgs e)
         {
-           
+            
             button1.Width = Cursor.Position.X;
             button1.Height = Cursor.Position.Y;
         }
