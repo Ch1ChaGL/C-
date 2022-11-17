@@ -1,0 +1,9 @@
+F:\C#\ФормыС#\3.3\3.3\bin\Debug\3.3.exe.config
+F:\C#\ФормыС#\3.3\3.3\bin\Debug\3.3.exe
+F:\C#\ФормыС#\3.3\3.3\bin\Debug\3.3.pdb
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\_3._3.Form1.resources
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\_3._3.Properties.Resources.resources
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\3.3.csproj.GenerateResource.cache
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\3.3.csproj.CoreCompileInputs.cache
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\3.3.exe
+F:\C#\ФормыС#\3.3\3.3\obj\Debug\3.3.pdb
