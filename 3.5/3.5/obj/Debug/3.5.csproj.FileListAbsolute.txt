@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\3.5\3.5\bin\Debug\3.5.exe.config
+C:\Users\User\source\repos\3.5\3.5\bin\Debug\3.5.exe
+C:\Users\User\source\repos\3.5\3.5\bin\Debug\3.5.pdb
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\_3._5.Form1.resources
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\_3._5.Properties.Resources.resources
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.csproj.GenerateResource.cache
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.exe
+C:\Users\User\source\repos\3.5\3.5\obj\Debug\3.5.pdb
