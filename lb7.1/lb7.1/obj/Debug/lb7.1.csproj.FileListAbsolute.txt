@@ -1,0 +1,10 @@
+E:\C#\ФормыС#\lb7.1\lb7.1\bin\Debug\lb7.1.exe.config
+E:\C#\ФормыС#\lb7.1\lb7.1\bin\Debug\lb7.1.exe
+E:\C#\ФормыС#\lb7.1\lb7.1\bin\Debug\lb7.1.pdb
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7.1.csprojAssemblyReference.cache
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7._1.Form1.resources
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7._1.Properties.Resources.resources
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7.1.csproj.GenerateResource.cache
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7.1.csproj.CoreCompileInputs.cache
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7.1.exe
+E:\C#\ФормыС#\lb7.1\lb7.1\obj\Debug\lb7.1.pdb
