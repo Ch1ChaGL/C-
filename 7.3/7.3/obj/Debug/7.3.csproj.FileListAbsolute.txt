@@ -1,0 +1,11 @@
+F:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.exe.config
+F:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.exe
+F:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.pdb
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.AssemblyReference.cache
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.SuggestedBindingRedirects.cache
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\_7._3.Form1.resources
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\_7._3.Properties.Resources.resources
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.GenerateResource.cache
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.CoreCompileInputs.cache
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.exe
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.pdb
