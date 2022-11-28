@@ -34,11 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ичнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ичнаяToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ричнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ричнаяToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -112,13 +112,6 @@
             this.toolStripMenuItem1.Text = "Системы счисления";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.Enabled = false;
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            // 
             // ичнаяToolStripMenuItem
             // 
             this.ичнаяToolStripMenuItem.Name = "ичнаяToolStripMenuItem";
@@ -146,6 +139,13 @@
             this.ричнаяToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.ричнаяToolStripMenuItem1.Text = "16-ричная";
             this.ричнаяToolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -213,6 +213,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "«Расчет в различных  системах>";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

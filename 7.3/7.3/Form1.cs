@@ -271,5 +271,20 @@ namespace _7._3
                 label2.Text = "";
             }
         }
+
+        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();  // создание экземпляра второй формы
+            form2.Owner = this;     // родительской для формы 2 будет текущая форма
+            form2.ShowDialog();     // показать окно второй формы в модальном режиме
+            this.BackColor = form2.FormColor;   // применить настройки
+            this.Size = form2.FormSize;
+            this.WindowState = form2.Maximizade;
+            if(form2.startPosition == 0)
+            {
+                this.StartPosition = new Point(100, 200);
+            }
+
+        }
     }
 }

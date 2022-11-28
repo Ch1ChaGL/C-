@@ -9,3 +9,14 @@ F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.GenerateResource.cache
 F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.CoreCompileInputs.cache
 F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.exe
 F:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.pdb
+E:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.exe.config
+E:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.exe
+E:\C#\ФормыС#\7.3\7.3\bin\Debug\7.3.pdb
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\_7._3.Form1.resources
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\_7._3.Properties.Resources.resources
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.GenerateResource.cache
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csproj.CoreCompileInputs.cache
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.exe
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.pdb
+E:\C#\ФормыС#\7.3\7.3\obj\Debug\7.3.csprojAssemblyReference.cache
+F:\C#\ФормыС#\7.3\7.3\obj\Debug\_7._3.Form2.resources
