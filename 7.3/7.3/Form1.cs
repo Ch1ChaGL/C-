@@ -18,7 +18,8 @@ namespace _7._3
         Boolean format8 = false;
         Boolean format16 = false;
         public Form1()
-        {
+        {   
+            
             InitializeComponent();
         }
         private int format2n(int num1, int num2)
@@ -279,11 +280,33 @@ namespace _7._3
             form2.ShowDialog();     // показать окно второй формы в модальном режиме
             this.BackColor = form2.FormColor;   // применить настройки
             this.Size = form2.FormSize;
-            this.WindowState = form2.Maximizade;
-            if(form2.startPosition == 0)
+            switch (form2.startPosition)
             {
-                this.StartPosition = new Point(100, 200);
+
+                case 0:
+                    {
+                        CenterToScreen();
+                        break;
+                    }
+                case 1:
+                    {
+                        CenterToScreen();
+                        Top = 0;
+                        break;
+                    }
+                case 2:
+                    {
+                        CenterToScreen();
+                        Location = new Point(Location.X, Screen.PrimaryScreen.Bounds.Size.Height - Height);
+                        break;
+                    }
+                case 3:
+                    {
+                        WindowState = FormWindowState.Maximized;
+                        break;
+                    }
             }
+            int num = 0;
 
         }
     }

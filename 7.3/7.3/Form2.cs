@@ -13,9 +13,11 @@ namespace _7._3
 {
     public partial class Form2 : Form
     {
+ 
         public Form2()
         {
             InitializeComponent();
+           
         }
         public Color FormColor
         {
@@ -28,8 +30,15 @@ namespace _7._3
         public Size FormSize
         {
             get
-            {   
-                return new Size(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text));
+            {
+                try
+                {
+                    return new Size(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
+                }
+                catch
+                {
+                    return new Size(500, 500);
+                }
             }
         }
 
@@ -49,29 +58,31 @@ namespace _7._3
 
         }
 
-        public FormStartPosition startPosition
+        public int startPosition
         {
+             
             get 
-            { 
-                if(comboBox1.SelectedIndex == 0)
-                {
-                    return FormStartPosition.CenterScreen;
+            {
+                
 
-                }
-                if(comboBox1.SelectedIndex == 1)
+                //if(comboBox1.SelectedIndex == 0)
+                //{
+                if(comboBox1.Text == "по центру")
                 {
-
-                    return FormStartPosition.Manual;
+                    return 0;
                 }
-                if (comboBox1.SelectedIndex == 2)
+                if (comboBox1.Text == "сверху по центру")
                 {
-                    return  FormStartPosition.Manual;
+                    return 1;
+                }
+                if (comboBox1.Text == "снизу по центру")
+                {
+                    return 2;
                 }
                 else
                 {
-                    return FormStartPosition.Manual;
-                }
-
+                    return 3;
+                }              
 
             }
          
