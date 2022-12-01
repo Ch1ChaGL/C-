@@ -1,0 +1,10 @@
+E:\C#\ФормыС#\10\10\bin\Debug\10.exe.config
+E:\C#\ФормыС#\10\10\bin\Debug\10.exe
+E:\C#\ФормыС#\10\10\bin\Debug\10.pdb
+E:\C#\ФормыС#\10\10\obj\Debug\10.csprojAssemblyReference.cache
+E:\C#\ФормыС#\10\10\obj\Debug\_10.Form1.resources
+E:\C#\ФормыС#\10\10\obj\Debug\_10.Properties.Resources.resources
+E:\C#\ФормыС#\10\10\obj\Debug\10.csproj.GenerateResource.cache
+E:\C#\ФормыС#\10\10\obj\Debug\10.csproj.CoreCompileInputs.cache
+E:\C#\ФормыС#\10\10\obj\Debug\10.exe
+E:\C#\ФормыС#\10\10\obj\Debug\10.pdb
