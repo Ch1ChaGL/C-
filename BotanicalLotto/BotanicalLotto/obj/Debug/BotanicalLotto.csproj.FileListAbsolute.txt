@@ -1,0 +1,12 @@
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.exe.config
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.exe
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.pdb
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.AssemblyReference.cache
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.SuggestedBindingRedirects.cache
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.MainMenu.resources
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Properties.Resources.resources
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.GenerateResource.cache
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.CoreCompileInputs.cache
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.exe
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.pdb
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Settings.resources
