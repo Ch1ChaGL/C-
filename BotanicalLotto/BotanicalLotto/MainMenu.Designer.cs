@@ -42,6 +42,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Начать игру";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Game);
             // 
             // button2
             // 
@@ -51,7 +52,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Настройки";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Settings);
             // 
             // button3
             // 
@@ -70,6 +71,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Выход";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Exit);
             // 
             // MainMenu
             // 

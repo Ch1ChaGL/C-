@@ -11,23 +11,42 @@ using System.Windows.Forms;
 namespace BotanicalLotto
 { 
     public partial class MainMenu : Form
-    {
+    {       
+        MyStyle myStyle = new MyStyle(
+           Properties.Settings.Default.FontStyle,
+           Properties.Settings.Default.FontSize,
+           Properties.Settings.Default.theme);
         
-        MyStyle myStyle;
         public MainMenu()
         {
             InitializeComponent();
+            myStyle.SetStyle(this);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Settings(object sender, EventArgs e)
         {
-
             Settings settings = new Settings(this);
-            if (myStyle != null)  myStyle.SetStyle(settings);               
+            myStyle.SetStyle(settings);
             Visible = false;
             settings.ShowDialog();
-            if(settings.myStyle != null) myStyle = settings.myStyle;
+            if (settings.myStyle != null) { 
+                myStyle = settings.myStyle;
+            };
             if (myStyle != null) myStyle.SetStyle(this);
+
+        }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Game(object sender, EventArgs e)
+        {
+            Game game = new Game(this);
+            myStyle.SetStyle(game);
+            game.Show();
+            Visible = false;
         }
     }
 }

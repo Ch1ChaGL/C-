@@ -45,7 +45,7 @@
             "Цветовая тема 1",
             "Цветовая тема 2",
             "Цветовая тема 3"});
-            this.comboBox1.Location = new System.Drawing.Point(270, 73);
+            this.comboBox1.Location = new System.Drawing.Point(270, 65);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(239, 21);
             this.comboBox1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(267, 118);
+            this.label2.Location = new System.Drawing.Point(267, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(267, 201);
+            this.label3.Location = new System.Drawing.Point(267, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 13);
             this.label3.TabIndex = 5;
@@ -95,9 +95,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 297);
+            this.button1.Location = new System.Drawing.Point(270, 272);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 23);
+            this.button1.Size = new System.Drawing.Size(239, 60);
             this.button1.TabIndex = 6;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(432, 297);
+            this.button2.Location = new System.Drawing.Point(270, 352);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 23);
+            this.button2.Size = new System.Drawing.Size(239, 60);
             this.button2.TabIndex = 7;
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(267, 43);
+            this.label4.Location = new System.Drawing.Point(267, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 13);
             this.label4.TabIndex = 8;

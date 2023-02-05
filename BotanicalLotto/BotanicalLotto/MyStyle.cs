@@ -22,6 +22,7 @@ namespace BotanicalLotto
         {   
             _theme = theme;
             _fontStyle = new Font(fontStyle, _fontSize[fontSize]);
+
         }
         public void SetStyle(Form form)
         {

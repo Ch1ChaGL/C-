@@ -41,6 +41,10 @@ namespace BotanicalLotto
             myStyle = new MyStyle(fontStyle, fontSize, theme);
             WhoShowMe.Visible = true;
             Close();
+            Properties.Settings.Default.FontStyle = fontStyle;
+            Properties.Settings.Default.FontSize = fontSize;
+            Properties.Settings.Default.theme = theme;
+            Properties.Settings.Default.Save();
         }
     
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

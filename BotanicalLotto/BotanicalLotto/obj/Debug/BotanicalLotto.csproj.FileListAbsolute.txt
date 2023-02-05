@@ -10,3 +10,4 @@ F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.cspro
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.exe
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.pdb
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Settings.resources
+F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Game.resources
