@@ -25,7 +25,7 @@ namespace BotanicalLotto.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"Arial\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"Verdana\"")]
         public string FontStyle {
             get {
                 return ((string)(this["FontStyle"]));

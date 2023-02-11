@@ -11,3 +11,15 @@ F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.exe
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.pdb
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Settings.resources
 F:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Game.resources
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.exe.config
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.exe
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\bin\Debug\BotanicalLotto.pdb
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csprojAssemblyReference.cache
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Game.resources
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.MainMenu.resources
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Properties.Resources.resources
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.Settings.resources
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.GenerateResource.cache
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.csproj.CoreCompileInputs.cache
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.exe
+E:\C#\ФормыС#\BotanicalLotto\BotanicalLotto\obj\Debug\BotanicalLotto.pdb

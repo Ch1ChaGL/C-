@@ -25,10 +25,11 @@ namespace BotanicalLotto
 
         private void Settings(object sender, EventArgs e)
         {
-            Settings settings = new Settings(this);
+            Settings settings = new Settings();
             myStyle.SetStyle(settings);
             Visible = false;
             settings.ShowDialog();
+            Visible = true;
             if (settings.myStyle != null) { 
                 myStyle = settings.myStyle;
             };
@@ -43,10 +44,11 @@ namespace BotanicalLotto
 
         private void Game(object sender, EventArgs e)
         {
-            Game game = new Game(this);
+            Game game = new Game();
             myStyle.SetStyle(game);
-            game.Show();
             Visible = false;
+            game.ShowDialog();
+            Visible = true;
         }
     }
 }

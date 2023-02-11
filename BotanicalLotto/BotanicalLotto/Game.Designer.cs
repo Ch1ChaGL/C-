@@ -40,6 +40,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.TimerText = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.hintText = new System.Windows.Forms.Label();
+            this.Skip = new System.Windows.Forms.Button();
+            this.hint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,9 +75,9 @@
             // 
             // Next
             // 
-            this.Next.Location = new System.Drawing.Point(768, 284);
+            this.Next.Location = new System.Drawing.Point(913, 268);
             this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(275, 73);
+            this.Next.Size = new System.Drawing.Size(130, 73);
             this.Next.TabIndex = 8;
             this.Next.Text = "Следующий";
             this.Next.UseVisualStyleBackColor = true;
@@ -150,10 +153,42 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // hintText
+            // 
+            this.hintText.Location = new System.Drawing.Point(299, 79);
+            this.hintText.Name = "hintText";
+            this.hintText.Size = new System.Drawing.Size(463, 262);
+            this.hintText.TabIndex = 11;
+            // 
+            // Skip
+            // 
+            this.Skip.Location = new System.Drawing.Point(768, 268);
+            this.Skip.Name = "Skip";
+            this.Skip.Size = new System.Drawing.Size(129, 73);
+            this.Skip.TabIndex = 12;
+            this.Skip.Text = "Пропустить";
+            this.Skip.UseVisualStyleBackColor = true;
+            this.Skip.Click += new System.EventHandler(this.Skip_Click);
+            // 
+            // hint
+            // 
+            this.hint.Location = new System.Drawing.Point(462, 370);
+            this.hint.Name = "hint";
+            this.hint.Size = new System.Drawing.Size(151, 53);
+            this.hint.TabIndex = 13;
+            this.hint.Text = "Подсказка";
+            this.hint.UseVisualStyleBackColor = true;
+            this.hint.Click += new System.EventHandler(this.hint_Click);
+            this.hint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.hint_MouseDown);
+            this.hint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.hint_MouseUp);
+            // 
             // Game
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1064, 450);
+            this.Controls.Add(this.hint);
+            this.Controls.Add(this.Skip);
+            this.Controls.Add(this.hintText);
             this.Controls.Add(this.TimerText);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Next);
@@ -162,7 +197,6 @@
             this.Controls.Add(this.State);
             this.Name = "Game";
             this.Text = "Game";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -183,5 +217,8 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label TimerText;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label hintText;
+        private System.Windows.Forms.Button Skip;
+        private System.Windows.Forms.Button hint;
     }
 }

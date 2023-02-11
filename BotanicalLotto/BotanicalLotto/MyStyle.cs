@@ -29,7 +29,8 @@ namespace BotanicalLotto
             form.BackColor = _themeColor[_theme];
             form.Font = _fontStyle;
             foreach(Control control in form.Controls)
-            {
+            {   
+                control.Font = _fontStyle;
                 if (control is Button) {
                     control.ForeColor = _ButtonBackColor[_theme];
                     control.BackColor = _ButtonForeColor[_theme];

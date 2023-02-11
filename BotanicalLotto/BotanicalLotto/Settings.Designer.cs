@@ -65,12 +65,13 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Arial",
             "Times New Roman",
-            "Tahoma"});
+            "Tahoma",
+            "Verdana",
+            "Agency FB"});
             this.comboBox2.Location = new System.Drawing.Point(270, 146);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(239, 21);
             this.comboBox2.TabIndex = 2;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 

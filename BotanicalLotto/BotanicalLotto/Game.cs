@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace BotanicalLotto
 {
     public partial class Game : Form
-    {
-        Form menu1;
+    {   string fileName;
         double totalQuestions = 10;
         double countQuestion = 0;
         double countTrueQuestion = 0;
@@ -28,26 +20,19 @@ namespace BotanicalLotto
         int sec = 0;
         List<string> plantNames =  new List<string>();
         string aPath;
-        public Game(Form menu)
+        public Game()
         {   
-            menu1 = menu;
             InitializeComponent();
             FindImages();
             generateQuestion();
             timer1.Start();
-        }
-
-        private void Game_Load(object sender, EventArgs e)
-        {
-
-            
-        }
+        }    
         private void FindImages()
         {   plantNames.Clear();
             groupBox1.Visible = false;
             aPath = Application.StartupPath + "\\Images\\";  //путь к изображениям
             DirectoryInfo di = new DirectoryInfo(aPath);   // получение директории
-            FileInfo[] fi = di.GetFiles("*.jpg");  // поиск графических файлов
+            FileInfo[] fi =  di.GetFiles("*.jpg");  // поиск графических файлов
             foreach(FileInfo fc in fi)                                      // foreach (FileInfo fc in fi)
             {
                 int x = fc.Name.IndexOf('.');
@@ -91,8 +76,8 @@ namespace BotanicalLotto
             }
             answer = rnd.Next(colection.Count);
             Question.Text = $"Что это за цветок";
-            var fileName = colection[answer].Text + ".jpg";
-            pictureBox1.Image = new Bitmap(aPath + fileName);
+            fileName = colection[answer].Text;
+            pictureBox1.Image = new Bitmap(aPath + fileName + ".jpg");
 
         }
 
@@ -128,9 +113,17 @@ namespace BotanicalLotto
         {
             var colection = groupBox1.Controls;
             countQuestion += 1;
-            for (int i = 0; i< colection.Count; i++)
+            StateCheck(colection);           
+            if(countQuestion == totalQuestions)            
+                CalculationOfResults();
+            else
+                generateQuestion();
+        }
+        private void StateCheck(Control.ControlCollection colection)
+        {
+            for (int i = 0; i < colection.Count; i++)
             {
-                if(((System.Windows.Forms.RadioButton)colection[i]).Checked == true)
+                if (((System.Windows.Forms.RadioButton)colection[i]).Checked == true)
                 {
                     if (i == answer) { state = "Правильно"; countTrueQuestion += 1; }
                     else state = "Неправильно";
@@ -138,18 +131,44 @@ namespace BotanicalLotto
                 }
                 state = "Неправильно";
             }
-            if(state == "Правильно") { State.ForeColor = Color.Green; State.Text = state; }
+            if (state == "Правильно") { State.ForeColor = Color.Green; State.Text = state; }
             else { State.ForeColor = Color.Red; State.Text = state; }
-            
-            if(countQuestion == totalQuestions)            
+        }     
+        private void Skip_Click(object sender, EventArgs e)
+        {
+            countQuestion += 1;
+            if (countQuestion == totalQuestions)
                 CalculationOfResults();
             else
                 generateQuestion();
         }
 
-        private void Game_FormClosed(object sender, FormClosedEventArgs e)
+        private void hint_Click(object sender, EventArgs e)
         {
-            menu1.Visible = true;
+           
+        }
+
+        private void hint_MouseDown(object sender, MouseEventArgs e)
+        {   
+            StreamReader sr = null;
+            try {
+                sr = new StreamReader(Application.StartupPath + $"\\Hint\\{fileName}.txt", Encoding.UTF8);
+                hintText.Text = sr.ReadToEnd();    
+            }
+            catch (Exception err) {
+                hintText.Text = err.Message;
+            }
+            finally {
+                if (sr != null)
+                {
+                    sr.Close();
+                }
+            }
+        }
+
+        private void hint_MouseUp(object sender, MouseEventArgs e)
+        {
+            hintText.Text = "";
         }
     }
 }
