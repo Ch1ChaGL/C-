@@ -178,7 +178,6 @@
             this.hint.TabIndex = 13;
             this.hint.Text = "Подсказка";
             this.hint.UseVisualStyleBackColor = true;
-            this.hint.Click += new System.EventHandler(this.hint_Click);
             this.hint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.hint_MouseDown);
             this.hint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.hint_MouseUp);
             // 

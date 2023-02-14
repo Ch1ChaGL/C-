@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -9,7 +10,8 @@ using System.Windows.Forms;
 namespace BotanicalLotto
 {
     public partial class Game : Form
-    {   string fileName;
+    {
+        string fileName;
         double totalQuestions = 10;
         double countQuestion = 0;
         double countTrueQuestion = 0;
@@ -18,22 +20,36 @@ namespace BotanicalLotto
         int answer = 0;
         int min = 0;
         int sec = 0;
-        List<string> plantNames =  new List<string>();
+        private List<string> plantNames = new List<string>();
+        private List<string> questionList = new List<string>();
         string aPath;
         public Game()
-        {   
+        {
             InitializeComponent();
             FindImages();
+            generateQuestionList();
             generateQuestion();
             timer1.Start();
-        }    
+        }
+
+        private void generateQuestionList()
+        {
+            Shuffle(plantNames);
+            for (int i = 0; i< totalQuestions; i++)
+            {
+                questionList.Add(plantNames[i]);
+            }
+            Shuffle(questionList);
+        }
+
         private void FindImages()
-        {   plantNames.Clear();
+        {
+            plantNames.Clear();
             groupBox1.Visible = false;
             aPath = Application.StartupPath + "\\Images\\";  //путь к изображениям
             DirectoryInfo di = new DirectoryInfo(aPath);   // получение директории
-            FileInfo[] fi =  di.GetFiles("*.jpg");  // поиск графических файлов
-            foreach(FileInfo fc in fi)                                      // foreach (FileInfo fc in fi)
+            FileInfo[] fi = di.GetFiles("*.jpg");  // поиск графических файлов
+            foreach (FileInfo fc in fi)                                      // foreach (FileInfo fc in fi)
             {
                 int x = fc.Name.IndexOf('.');
                 string s = fc.Name.Remove(x, fc.Name.Length - x);// обрежем имя файла до точки
@@ -65,16 +81,36 @@ namespace BotanicalLotto
 
         }
         private void generateQuestion()
-        {   
-            Shuffle(plantNames);
+        {
             var colection = groupBox1.Controls;
+
+ 
+
+            string answerText = questionList.First();
+            questionList.RemoveAt(0);
+
+            plantNames.RemoveAt(plantNames.IndexOf(answerText));
+            answer = rnd.Next(colection.Count);
+
+            Shuffle(plantNames);
             colection.Owner.Visible = true;
+
+
             for (int i = 0; i < colection.Count; i++)
             {
-                colection[i].Text = plantNames[i];
-                colection[i].Visible = true;
+                if (i == answer)
+                {
+                    colection[i].Text = answerText;
+                    colection[i].Visible = true;
+                }
+                else
+                {
+                    colection[i].Text = plantNames[i];
+                    colection[i].Visible = true;
+                }
             }
-            answer = rnd.Next(colection.Count);
+
+            plantNames.Add(answerText);
             Question.Text = $"Что это за цветок";
             fileName = colection[answer].Text;
             pictureBox1.Image = new Bitmap(aPath + fileName + ".jpg");
@@ -99,22 +135,22 @@ namespace BotanicalLotto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            sec += 1;      
+            sec += 1;
             if (sec == 60)
             {
                 min += 1;
                 sec = 0;
             }
             TimerText.Text = $"Игра идет {min} мин и {sec} сек";
-            if (min == 1) { timer1.Stop(); CalculationOfResults(); }
+            if (min == 3) { timer1.Stop(); CalculationOfResults(); }
         }
 
         private void Next_click(object sender, EventArgs e)
         {
             var colection = groupBox1.Controls;
             countQuestion += 1;
-            StateCheck(colection);           
-            if(countQuestion == totalQuestions)            
+            StateCheck(colection);
+            if (countQuestion == totalQuestions)
                 CalculationOfResults();
             else
                 generateQuestion();
@@ -133,7 +169,7 @@ namespace BotanicalLotto
             }
             if (state == "Правильно") { State.ForeColor = Color.Green; State.Text = state; }
             else { State.ForeColor = Color.Red; State.Text = state; }
-        }     
+        }
         private void Skip_Click(object sender, EventArgs e)
         {
             countQuestion += 1;
@@ -141,24 +177,22 @@ namespace BotanicalLotto
                 CalculationOfResults();
             else
                 generateQuestion();
-        }
-
-        private void hint_Click(object sender, EventArgs e)
-        {
-           
-        }
+        }      
 
         private void hint_MouseDown(object sender, MouseEventArgs e)
-        {   
+        {
             StreamReader sr = null;
-            try {
+            try
+            {
                 sr = new StreamReader(Application.StartupPath + $"\\Hint\\{fileName}.txt", Encoding.UTF8);
-                hintText.Text = sr.ReadToEnd();    
+                hintText.Text = sr.ReadToEnd();
             }
-            catch (Exception err) {
+            catch (Exception err)
+            {
                 hintText.Text = err.Message;
             }
-            finally {
+            finally
+            {
                 if (sr != null)
                 {
                     sr.Close();
@@ -172,4 +206,3 @@ namespace BotanicalLotto
         }
     }
 }
-

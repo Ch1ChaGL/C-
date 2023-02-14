@@ -50,5 +50,10 @@ namespace BotanicalLotto
             game.ShowDialog();
             Visible = true;
         }
+
+        private void record_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show( $"Ваш лучший результат: {Properties.Settings.Default.record2 * 100}%");
+        }
     }
 }

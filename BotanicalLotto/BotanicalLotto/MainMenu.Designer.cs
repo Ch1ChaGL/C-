@@ -30,7 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.record = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,14 +54,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Settings);
             // 
-            // button3
+            // record
             // 
-            this.button3.Location = new System.Drawing.Point(282, 257);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 61);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Рекорды";
-            this.button3.UseVisualStyleBackColor = true;
+            this.record.Location = new System.Drawing.Point(282, 257);
+            this.record.Name = "record";
+            this.record.Size = new System.Drawing.Size(206, 61);
+            this.record.TabIndex = 2;
+            this.record.Text = "Рекорды";
+            this.record.UseVisualStyleBackColor = true;
+            this.record.Click += new System.EventHandler(this.record_Click);
             // 
             // button4
             // 
@@ -79,7 +80,7 @@
             this.BackColor = System.Drawing.Color.PaleGreen;
             this.ClientSize = new System.Drawing.Size(802, 489);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.record);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -94,7 +95,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button record;
         private System.Windows.Forms.Button button4;
     }
 }
