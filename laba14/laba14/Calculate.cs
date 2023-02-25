@@ -16,7 +16,7 @@ namespace laba14
         private List<double> yValue = new List<double>();     
         private delegate double Fun(double x, double a);
         private Dictionary<string, Fun> mapFun;
-
+       
        
 
         private double firstFunction(double x, double a)
@@ -49,8 +49,7 @@ namespace laba14
 
         public Calculate()
         {
-            InitializeComponent();
-            label9.Text = collectionFunction.Text;
+            InitializeComponent();            
             mapFun = new Dictionary<string, Fun>()
             {
                 { "Cos(ax) * e^x", firstFunction},
@@ -75,6 +74,9 @@ namespace laba14
                     double.Parse(aValue.Text)
                 );
                 initializationDataGridView(xValue.Count);
+                Graph graph = new Graph(collectionFunction.Text,xValue,yValue);
+                graph.ShowDialog();
+
             }
             catch(Exception err)
             {

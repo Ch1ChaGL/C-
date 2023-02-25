@@ -47,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buildAGraph = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -239,21 +238,11 @@
             this.buildAGraph.UseVisualStyleBackColor = true;
             this.buildAGraph.Click += new System.EventHandler(this.buildAGraph_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(405, 278);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "label9";
-            // 
             // Calculate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 637);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.buildAGraph);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -293,7 +282,6 @@
         private System.Windows.Forms.Button buildAGraph;
         private System.Windows.Forms.TextBox aValue;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
     }
 }
 
