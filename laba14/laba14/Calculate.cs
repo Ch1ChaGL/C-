@@ -16,7 +16,7 @@ namespace laba14
         private List<double> yValue = new List<double>();     
         private delegate double Fun(double x, double a);
         private Dictionary<string, Fun> mapFun;
-       
+        private string format = "";
        
 
         private double firstFunction(double x, double a)
@@ -57,7 +57,7 @@ namespace laba14
                 { "-Sin(ax) * e^x", thirdFunction},
 
             };
-
+            buildAGraph.Enabled = false;
             
 
         }
@@ -74,7 +74,7 @@ namespace laba14
                     double.Parse(aValue.Text)
                 );
                 initializationDataGridView(xValue.Count);
-                Graph graph = new Graph(collectionFunction.Text,xValue,yValue);
+                Graph graph = new Graph(collectionFunction.Text,xValue,yValue,format);
                 graph.ShowDialog();
 
             }
@@ -111,6 +111,39 @@ namespace laba14
             dataGridView1.Rows.Insert(0, headerRow);
 
             dataGridView1.Height = dataGridView1.Rows.GetRowsHeight(DataGridViewElementStates.Visible);
+        }
+
+        private void degrees_CheckedChanged(object sender, EventArgs e)
+        {
+            var radio = (RadioButton)sender;
+
+            if(radio.Text == "Градусы")
+            {
+                format = "0°";
+            }
+            else
+            {
+                format = "0.##";
+            }
+            checkAllDataSelected();
+        }
+
+        private void checkAllDataSelected()
+        {
+            if (collectionFunction.Text != "" && (radians.Checked || degrees.Checked) && startValue.Text != "" &&
+                endValue.Text != "" && step.Text != "" && aValue.Text != "")
+            {
+                buildAGraph.Enabled = true;
+            }
+            else
+            {
+                buildAGraph.Enabled = false;
+            }
+        }
+
+        private void startValue_TextChanged(object sender, EventArgs e)
+        {
+            checkAllDataSelected();
         }
     }
 }

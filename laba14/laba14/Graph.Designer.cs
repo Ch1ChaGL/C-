@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Save = new System.Windows.Forms.Button();
+            this.settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // settings
+            // 
+            this.settings.Location = new System.Drawing.Point(717, 576);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(131, 39);
+            this.settings.TabIndex = 2;
+            this.settings.Text = "Settings";
+            this.settings.UseVisualStyleBackColor = true;
+            this.settings.Click += new System.EventHandler(this.settings_Click);
+            // 
             // Graph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 627);
+            this.Controls.Add(this.settings);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.chart1);
             this.Name = "Graph";
@@ -80,5 +92,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button settings;
     }
 }

@@ -14,20 +14,20 @@ namespace laba14
 {
     public partial class Graph : Form
     {
-        private Series series1;
-        public Graph(string nameSeries, List<double> xValues, List<double> yValues)
+
+        public Graph(string nameSeries, List<double> xValues, List<double> yValues, string format)
         {
             InitializeComponent();
             InitializeSeries(nameSeries,xValues, yValues);
             CreateGraph(xValues,yValues, nameSeries);
-
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = format;
         }
         private void InitializeSeries(string nameSeries,List<double> xValues, List<double> yValues)
         {
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisY.Minimum = -100;
             chart1.ChartAreas[0].AxisY.Maximum = 100;
-            series1 = new Series(nameSeries)
+            Series series1 = new Series(nameSeries)
             {
                 ChartType = SeriesChartType.Spline,
                 BorderWidth = 4,
@@ -54,5 +54,15 @@ namespace laba14
                 fs.Close();
             }
         }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            Settigns settigns = new Settigns(chart1);
+            Visible = false;
+            settigns.ShowDialog();
+            Visible = true;
+        }
+        
+        
     }
 }

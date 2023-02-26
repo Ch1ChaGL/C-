@@ -10,3 +10,4 @@ F:\C#\ФормыС#\laba14\laba14\bin\Debug\laba14.pdb
 F:\C#\ФормыС#\laba14\laba14\obj\Debug\laba14.exe
 F:\C#\ФормыС#\laba14\laba14\obj\Debug\laba14.pdb
 F:\C#\ФормыС#\laba14\laba14\obj\Debug\laba14.Graph.resources
+F:\C#\ФормыС#\laba14\laba14\obj\Debug\laba14.Settigns.resources

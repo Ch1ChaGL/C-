@@ -96,6 +96,7 @@
             this.radians.TabStop = true;
             this.radians.Text = "Радианы";
             this.radians.UseVisualStyleBackColor = true;
+            this.radians.CheckedChanged += new System.EventHandler(this.degrees_CheckedChanged);
             // 
             // degrees
             // 
@@ -107,6 +108,7 @@
             this.degrees.TabStop = true;
             this.degrees.Text = "Градусы";
             this.degrees.UseVisualStyleBackColor = true;
+            this.degrees.CheckedChanged += new System.EventHandler(this.degrees_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -134,6 +136,7 @@
             this.aValue.Name = "aValue";
             this.aValue.Size = new System.Drawing.Size(48, 20);
             this.aValue.TabIndex = 10;
+            this.aValue.TextChanged += new System.EventHandler(this.startValue_TextChanged);
             // 
             // label8
             // 
@@ -177,6 +180,7 @@
             this.step.Name = "step";
             this.step.Size = new System.Drawing.Size(48, 20);
             this.step.TabIndex = 5;
+            this.step.TextChanged += new System.EventHandler(this.startValue_TextChanged);
             // 
             // endValue
             // 
@@ -184,6 +188,7 @@
             this.endValue.Name = "endValue";
             this.endValue.Size = new System.Drawing.Size(48, 20);
             this.endValue.TabIndex = 4;
+            this.endValue.TextChanged += new System.EventHandler(this.startValue_TextChanged);
             // 
             // startValue
             // 
@@ -191,6 +196,7 @@
             this.startValue.Name = "startValue";
             this.startValue.Size = new System.Drawing.Size(48, 20);
             this.startValue.TabIndex = 3;
+            this.startValue.TextChanged += new System.EventHandler(this.startValue_TextChanged);
             // 
             // label4
             // 
