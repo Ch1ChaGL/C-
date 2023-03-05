@@ -1,0 +1,8 @@
+F:\C#\ФормыС#\Tinkof\Tinkof\bin\Debug\Tinkof.exe.config
+F:\C#\ФормыС#\Tinkof\Tinkof\bin\Debug\Tinkof.exe
+F:\C#\ФормыС#\Tinkof\Tinkof\bin\Debug\Tinkof.pdb
+F:\C#\ФормыС#\Tinkof\Tinkof\obj\Debug\Tinkof.csproj.AssemblyReference.cache
+F:\C#\ФормыС#\Tinkof\Tinkof\obj\Debug\Tinkof.csproj.SuggestedBindingRedirects.cache
+F:\C#\ФормыС#\Tinkof\Tinkof\obj\Debug\Tinkof.csproj.CoreCompileInputs.cache
+F:\C#\ФормыС#\Tinkof\Tinkof\obj\Debug\Tinkof.exe
+F:\C#\ФормыС#\Tinkof\Tinkof\obj\Debug\Tinkof.pdb
