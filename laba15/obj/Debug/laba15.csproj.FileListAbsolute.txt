@@ -1,0 +1,12 @@
+F:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.csproj.CoreCompileInputs.cache
+F:\C#\Лаба15\laba15\laba15\bin\Debug\laba15.dll
+F:\C#\Лаба15\laba15\laba15\bin\Debug\laba15.pdb
+F:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.dll
+F:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.pdb
+D:\C#\Лаба15\laba15\laba15\bin\Debug\laba15.dll
+D:\C#\Лаба15\laba15\laba15\bin\Debug\laba15.pdb
+D:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.csprojAssemblyReference.cache
+D:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.csproj.CoreCompileInputs.cache
+D:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.dll
+D:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.pdb
+F:\C#\Лаба15\laba15\laba15\obj\Debug\laba15.csproj.AssemblyReference.cache
