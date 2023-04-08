@@ -24,6 +24,7 @@ namespace laba16Form
         MyFile file = null;
         bool fileExists = false;
         string lastAction = "";
+        Font selectedFont = new Font("Arial", 14);
         public bool isSaving = true;
         private void newFile_Click(object sender, EventArgs e)
         {
@@ -56,10 +57,13 @@ namespace laba16Form
             file = new MyFile();
             if(file.OpenFile() == 1)
             {
+                richTextBox1.Enabled = true;
                 fileExists = true;
+               
                 richTextBox1.Text = file.Text;
                 lastAction = "Открытие файла из папки";
                 statusBar();
+                isSaving = true;
             }
             if (!isSaving)
             {
@@ -67,7 +71,6 @@ namespace laba16Form
             }
 
         }
-
         private void Exit_Click(object sender, EventArgs e)
         {
             
@@ -100,6 +103,7 @@ namespace laba16Form
 
         private void SaveAs_Click(object sender, EventArgs e)
         {
+            file.SaveFile();
             isSaving = true;
             if (fileExists) {
                 file.Text = richTextBox1.Text;
@@ -187,7 +191,7 @@ namespace laba16Form
             Visible = false;
             openFileSelected = false;
             fileSelected = null;
-            search sh = new search(this);
+            search sh = new search(this, selectedFont);
             sh.ShowDialog();
             Visible = true;
 
@@ -215,6 +219,67 @@ namespace laba16Form
             {
                 showDialogSave();
             }
+        }
+
+        private void шрифтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            if(fontDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedFont = fontDialog.Font;
+                richTextBox1.Font = selectedFont;
+            }
+        }
+
+        private void показатьСкрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (toolStrip1.Visible)
+            {
+                toolStrip1.Visible = false;
+                richTextBox1.Height = 380;
+                richTextBox1.Location = new Point(richTextBox1.Location.X, richTextBox1.Location.Y - 40);
+            }
+            else
+            {
+                toolStrip1.Visible = true;
+                richTextBox1.Height = 327;
+                richTextBox1.Location = new Point(richTextBox1.Location.X, richTextBox1.Location.Y + 40);
+            }
+        }
+
+        private void обАвтореToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Имя автора: Принц Полукровка\nEmail: ЯнеВоландеморт100%@example.com", "Об авторе");
+           
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutProgramm ab = new AboutProgramm();
+            ab.ShowDialog();
+        }
+
+        private void проверкаМатематическихВыраженийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            file = new MyFile();
+
+            
+            if (file.OpenFile() == 1)
+            {
+                MyFile.CheckBrackets(file);
+                richTextBox1.Enabled = true;
+                fileExists = true;
+                richTextBox1.Text = file.Text;
+                lastAction = "Проверка математических выражений в выбранном файле";
+                statusBar();
+                isSaving = true;
+                
+            }
+            if (!isSaving)
+            {
+                showDialogSave();
+            }
+
         }
     }
 }

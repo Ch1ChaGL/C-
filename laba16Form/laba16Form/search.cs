@@ -15,9 +15,10 @@ namespace laba16Form
 {
     public partial class search : Form
     {
-        public search(Form1 form1)
+        public search(Form1 form1, Font font)
         {
             InitializeComponent();
+            this.Font = font;
             this.form1 = form1;
         }
         Form1 form1;
