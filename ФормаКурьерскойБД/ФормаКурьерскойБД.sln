@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ФормаКурьерскойБД", "ФормаКурьерскойБД\ФормаКурьерскойБД.csproj", "{9C4E5B05-71F6-4CFF-8F4B-B859EE0D566D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C4E5B05-71F6-4CFF-8F4B-B859EE0D566D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4E5B05-71F6-4CFF-8F4B-B859EE0D566D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4E5B05-71F6-4CFF-8F4B-B859EE0D566D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4E5B05-71F6-4CFF-8F4B-B859EE0D566D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {563CCCF8-8FE0-4435-8ABD-51E6333D6B63}
+	EndGlobalSection
+EndGlobal

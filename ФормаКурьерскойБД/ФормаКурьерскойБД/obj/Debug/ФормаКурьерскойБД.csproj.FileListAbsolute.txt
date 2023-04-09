@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\bin\Debug\ФормаКурьерскойБД.exe.config
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\bin\Debug\ФормаКурьерскойБД.exe
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\bin\Debug\ФормаКурьерскойБД.pdb
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.Properties.Resources.resources
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.csproj.GenerateResource.cache
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.exe
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.pdb
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.ClientForm.resources
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.MainMenu.resources
+C:\Users\User\Desktop\КУРСАЧ_ТОГО_РОТ\ФормаКурьерскойБД\ФормаКурьерскойБД\obj\Debug\ФормаКурьерскойБД.LoginForm.resources
