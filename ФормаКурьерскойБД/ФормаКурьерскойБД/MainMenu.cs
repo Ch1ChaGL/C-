@@ -13,7 +13,7 @@ namespace ФормаКурьерскойБД
 {
     public partial class MainMenu : Form
     {
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Курсач;Integrated Security=True";
+        
         public MainMenu()
         {
            
@@ -23,39 +23,33 @@ namespace ФормаКурьерскойБД
         string login; 
         string password;
         string sql;
-        SqlCommand command;
-        SqlDataReader reader;
-        SqlConnection connection;
+        deliveryServiceDatabase database = new deliveryServiceDatabase();
 
 
         private void SignIn_Click(object sender, EventArgs e)
         {
-            // Создание подключения
-            connection = new SqlConnection(connectionString);
             try
             {
-                // Открываем подключение
-                connection.Open();
-                Console.WriteLine("Подключение открыто");
                 login = login_textbox.Text;
                 password = Password.Text;
-                if(login == Properties.Settings.Default.AdminLogin && password == Properties.Settings.Default.AdminPassword)
+                if (login == Properties.Settings.Default.AdminLogin && password == Properties.Settings.Default.AdminPassword)
                 {
-                    AdminForm af = new AdminForm();
+                    ManagerForm af = new ManagerForm();
                     Visible = false;
                     af.ShowDialog();
                     Visible = true;
                 }
                 else
                 {
-                    sql = $"SELECT * FROM Clients where email = '{login}' and Password = '{password}'";
-                    command = new SqlCommand(sql, connection);
-                    reader = command.ExecuteReader();
+                    sql = $"SELECT idClient FROM Clients where email = '{login}' and Password = '{password}'";
+                    SqlDataReader reader = database.ExecuteReader(sql, CommandType.Text);
                     if (reader.HasRows)
                     {
+                        reader.Read();
+                        int id = (int)reader.GetValue(0);
                         // Пользователь найден, обработка результата
                         Visible = false;
-                        ClientForm cf = new ClientForm();
+                        ClientForm cf = new ClientForm(id);
                         cf.ShowDialog();
                         Visible = true;
 
@@ -63,49 +57,40 @@ namespace ФормаКурьерскойБД
                     else
                     {
                         // Пользователь не найден, обработка результата
-                        MessageBox.Show("Пользователь не найден");
+                        MessageBox.Show("Неверный логин или пароль");
                     }
-                }             
+                }
             }
-            catch (SqlException ex)
+            catch(SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                // закрываем подключение
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+                       
         }
+     
 
         private void LogIn_Click(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectionString);
             try
             {
-                connection.Open();
                 login = login_textbox.Text;
                 password = Password.Text;
                 string sql = $"SELECT * FROM Clients where email = '{login}'";
-                command = new SqlCommand(sql, connection);
-                reader = command.ExecuteReader();
-              
+                SqlDataReader reader = database.ExecuteReader(sql, CommandType.Text);
                 Visible = false;
-                LoginForm LF = new LoginForm();
-                LF.ShowDialog();
-                Visible = true;                
+                ManagerForm managerForm = new ManagerForm();
+                managerForm.ShowDialog();
+                Visible = true;
             }
-            catch (SqlException ex)
+            catch(SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                // закрываем подключение
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+                              
         }
+     
+
+
+
     }
 }

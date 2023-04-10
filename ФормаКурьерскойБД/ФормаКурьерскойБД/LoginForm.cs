@@ -20,14 +20,19 @@ namespace ФормаКурьерскойБД
             InitializeComponent();
             Login.Enabled = false;
         }
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Курсач;Integrated Security=True";
-
+        deliveryServiceDatabase database = new deliveryServiceDatabase();       
         private void checTextBox()
         {
+            bool emailValid = false; ;
+            if (Email.Text.Contains('@') && Email.Text.Count(c => c == '@') == 1)
+            {
+                emailValid = true;// ваш код для случая, когда в строке содержится только один символ '@'
+            }
             bool allFilled = !string.IsNullOrEmpty(Fullname.Text) && !string.IsNullOrEmpty(PhoneNumber.Text)
             && !string.IsNullOrEmpty(Email.Text) && !string.IsNullOrEmpty(City.Text)
             && !string.IsNullOrEmpty(Street.Text) && !string.IsNullOrEmpty(House.Text) && !string.IsNullOrEmpty(Password.Text);
-            Login.Enabled = allFilled;
+            Login.Enabled = allFilled && emailValid;
+            
         }
         private void Fullname_TextChanged(object sender, EventArgs e)
         {
@@ -35,7 +40,7 @@ namespace ФормаКурьерскойБД
         }
 
         private void Login_Click(object sender, EventArgs e)
-        {
+        {       
             string fullname = Fullname.Text;
             string phone = PhoneNumber.Text;
             string email = Email.Text;
@@ -43,13 +48,10 @@ namespace ФормаКурьерскойБД
             string street = Street.Text;
             string house = House.Text;
             string password = Password.Text;
-            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                connection.Open();
                 string sqlExpression1 = $"select * from Clients where Email = '{email}'";
-                SqlCommand cmd = new SqlCommand(sqlExpression1, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = database.ExecuteReader(sqlExpression1, CommandType.Text);
                 if (reader.HasRows)
                 {
                     MessageBox.Show("Данный Email занят");
@@ -58,21 +60,18 @@ namespace ФормаКурьерскойБД
                 {
                     reader.Close();
                     string sqlExpression2 = $"Insert into Clients values ('{fullname}','{password}', '{phone}', '{email}', '{city}', '{street}', '{house}')";
-                    SqlCommand cmd2 = new SqlCommand(sqlExpression2, connection);
-                    int count = cmd2.ExecuteNonQuery();
-                    Console.WriteLine("Количество добавленных строк ", count);
+                    database.ExecuteNonQuery(sqlExpression2, CommandType.Text);         
                     Close();
                 }
             }
-            catch (SqlException ex)
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
+              
         }
+          
+        
 
         private void exit_Click(object sender, EventArgs e)
         {
