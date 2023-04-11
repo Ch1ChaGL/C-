@@ -28,19 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.CreateOrderBtn = new System.Windows.Forms.Button();
+            this.AboutOrder = new System.Windows.Forms.Button();
+            this.ListOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // AdminForm
+            // CreateOrderBtn
+            // 
+            this.CreateOrderBtn.Location = new System.Drawing.Point(370, 77);
+            this.CreateOrderBtn.Name = "CreateOrderBtn";
+            this.CreateOrderBtn.Size = new System.Drawing.Size(209, 74);
+            this.CreateOrderBtn.TabIndex = 1;
+            this.CreateOrderBtn.Text = "Создать заказ";
+            this.CreateOrderBtn.UseVisualStyleBackColor = true;
+            this.CreateOrderBtn.Click += new System.EventHandler(this.CreateOrder_Click);
+            // 
+            // AboutOrder
+            // 
+            this.AboutOrder.Location = new System.Drawing.Point(370, 177);
+            this.AboutOrder.Name = "AboutOrder";
+            this.AboutOrder.Size = new System.Drawing.Size(209, 74);
+            this.AboutOrder.TabIndex = 2;
+            this.AboutOrder.Text = "Проверить заказ";
+            this.AboutOrder.UseVisualStyleBackColor = true;
+            // 
+            // ListOrder
+            // 
+            this.ListOrder.Location = new System.Drawing.Point(370, 282);
+            this.ListOrder.Name = "ListOrder";
+            this.ListOrder.Size = new System.Drawing.Size(209, 69);
+            this.ListOrder.TabIndex = 3;
+            this.ListOrder.Text = "Список заказов";
+            this.ListOrder.UseVisualStyleBackColor = true;
+            // 
+            // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 522);
-            this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.ClientSize = new System.Drawing.Size(949, 528);
+            this.Controls.Add(this.ListOrder);
+            this.Controls.Add(this.AboutOrder);
+            this.Controls.Add(this.CreateOrderBtn);
+            this.Name = "ManagerForm";
+            this.Text = "ManagerForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CreateOrderBtn;
+        private System.Windows.Forms.Button AboutOrder;
+        private System.Windows.Forms.Button ListOrder;
     }
 }

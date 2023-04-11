@@ -24,7 +24,7 @@ namespace ФормаКурьерскойБД
         string password;
         string sql;
         deliveryServiceDatabase database = new deliveryServiceDatabase();
-
+        SqlDataReader reader;
 
         private void SignIn_Click(object sender, EventArgs e)
         {
@@ -32,17 +32,22 @@ namespace ФормаКурьерскойБД
             {
                 login = login_textbox.Text;
                 password = Password.Text;
-                if (login == Properties.Settings.Default.AdminLogin && password == Properties.Settings.Default.AdminPassword)
+                sql = $"SELECT idManager, idDepartment FROM Manager where email = '{login}' and Password = '{password}'";
+                reader = database.ExecuteReader(sql, CommandType.Text);
+                if (reader.HasRows)
                 {
-                    ManagerForm af = new ManagerForm();
+                    reader.Read();
+                    int idManager = (int)reader.GetValue(0);
+                    int idDepartment = (int)reader.GetValue(1);
+                    ManagerForm Mf = new ManagerForm(idManager, idDepartment);
                     Visible = false;
-                    af.ShowDialog();
+                    Mf.ShowDialog();
                     Visible = true;
                 }
                 else
                 {
                     sql = $"SELECT idClient FROM Clients where email = '{login}' and Password = '{password}'";
-                    SqlDataReader reader = database.ExecuteReader(sql, CommandType.Text);
+                    reader = database.ExecuteReader(sql, CommandType.Text);
                     if (reader.HasRows)
                     {
                         reader.Read();
@@ -71,22 +76,10 @@ namespace ФормаКурьерскойБД
 
         private void LogIn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                login = login_textbox.Text;
-                password = Password.Text;
-                string sql = $"SELECT * FROM Clients where email = '{login}'";
-                SqlDataReader reader = database.ExecuteReader(sql, CommandType.Text);
-                Visible = false;
-                ManagerForm managerForm = new ManagerForm();
-                managerForm.ShowDialog();
-                Visible = true;
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-                              
+            Visible = false;
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            Visible = true;
         }
      
 
