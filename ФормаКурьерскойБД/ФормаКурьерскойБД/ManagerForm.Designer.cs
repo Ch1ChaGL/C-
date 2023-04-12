@@ -45,27 +45,29 @@
             // 
             // AboutOrder
             // 
-            this.AboutOrder.Location = new System.Drawing.Point(370, 177);
+            this.AboutOrder.Location = new System.Drawing.Point(370, 196);
             this.AboutOrder.Name = "AboutOrder";
             this.AboutOrder.Size = new System.Drawing.Size(209, 74);
             this.AboutOrder.TabIndex = 2;
-            this.AboutOrder.Text = "Проверить заказ";
+            this.AboutOrder.Text = " Заказы подразделения";
             this.AboutOrder.UseVisualStyleBackColor = true;
+            this.AboutOrder.Click += new System.EventHandler(this.AboutOrder_Click);
             // 
             // ListOrder
             // 
-            this.ListOrder.Location = new System.Drawing.Point(370, 282);
+            this.ListOrder.Location = new System.Drawing.Point(370, 325);
             this.ListOrder.Name = "ListOrder";
             this.ListOrder.Size = new System.Drawing.Size(209, 69);
             this.ListOrder.TabIndex = 3;
-            this.ListOrder.Text = "Список заказов";
+            this.ListOrder.Text = "Поступающие заказы";
             this.ListOrder.UseVisualStyleBackColor = true;
+            this.ListOrder.Click += new System.EventHandler(this.ListOrder_Click);
             // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 528);
+            this.ClientSize = new System.Drawing.Size(971, 528);
             this.Controls.Add(this.ListOrder);
             this.Controls.Add(this.AboutOrder);
             this.Controls.Add(this.CreateOrderBtn);

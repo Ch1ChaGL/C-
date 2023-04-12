@@ -26,5 +26,21 @@ namespace ФормаКурьерскойБД
             createOrderForm.ShowDialog();
             Visible = true;
         }
+
+        private void AboutOrder_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            DepartmentOrder aboutOrderForm = new DepartmentOrder(idDepartment);
+            aboutOrderForm.ShowDialog();
+            Visible = true;
+        }
+
+        private void ListOrder_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            IncomingOrders incomingOrders = new IncomingOrders(idDepartment);
+            incomingOrders.ShowDialog();
+            Visible = true;
+        }
     }
 }

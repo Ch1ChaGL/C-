@@ -52,11 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentOrder.Designer.cs">
+      <DependentUpon>DepartmentOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateOrder.Designer.cs">
       <DependentUpon>CreateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomingOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomingOrders.Designer.cs">
+      <DependentUpon>IncomingOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
@@ -85,8 +97,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DepartmentOrder.resx">
+      <DependentUpon>DepartmentOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateOrder.resx">
       <DependentUpon>CreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomingOrders.resx">
+      <DependentUpon>IncomingOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
