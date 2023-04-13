@@ -75,7 +75,7 @@ namespace ФормаКурьерскойБД
 
         private void SearchOrderId_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.ExecuteQuery($"select * from Orders where IdOrder = {int.Parse(OrderIDSearch.Text)}", CommandType.Text);
+            dataGridView1.DataSource = database.ExecuteQuery($"exec getInfoAboutOrderById {int.Parse(OrderIDSearch.Text)}", CommandType.Text);
         }
 
         private void SearchOrderIdClent_Click(object sender, EventArgs e)

@@ -50,7 +50,8 @@ namespace ФормаКурьерскойБД
             string password = Password.Text;
             try
             {
-                string sqlExpression1 = $"select * from Clients where Email = '{email}'";
+
+                string sqlExpression1 = $"select * from Clients c, Manager m where m.Email = '{email}' or c.Email = '{email}'";
                 SqlDataReader reader = database.ExecuteReader(sqlExpression1, CommandType.Text);
                 if (reader.HasRows)
                 {
