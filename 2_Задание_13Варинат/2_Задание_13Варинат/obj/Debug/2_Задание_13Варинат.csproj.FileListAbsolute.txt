@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\bin\Debug\2_Задание_13Варинат.exe.config
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\bin\Debug\2_Задание_13Варинат.exe
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\bin\Debug\2_Задание_13Варинат.pdb
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\_2_Задание_13Варинат.Form1.resources
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\_2_Задание_13Варинат.Properties.Resources.resources
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.exe
+C:\Users\User\Desktop\Практика c#\2_Задание_13Варинат\2_Задание_13Варинат\obj\Debug\2_Задание_13Варинат.pdb
