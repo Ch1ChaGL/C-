@@ -15,53 +15,21 @@ namespace _3_Задание_13Вариант
             PictureBox pictureBox,
             RectangleF rectangleF,
             double x, 
-            double y, 
-            double width, 
-            double height, 
+            double y,  
             double radius
             ) 
-            : base(pictureBox,rectangleF,x,y,width,height)
+            : base(pictureBox,rectangleF,x,y)
         {
+
             _radius = radius;
-            this.width = radius * 2;
-            this.height = radius * 2;
+            width = radius * 2;
+            height = radius * 2;
+            if (!figureInContainer(rectangleF, x, y, width, height))
+            {
+                throw new ArgumentException("Figure does not fit inside the container rectangle.");
+            }
 
-            // Вычисляем координаты круга
-            this.x = rectangleF.X + rectangleF.Width / 2 - (float)_radius;
-            this.y = rectangleF.Y + rectangleF.Height / 2 - (float)_radius;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         public override double Area()
         {
@@ -70,7 +38,7 @@ namespace _3_Задание_13Вариант
 
         public override void Draw()
         {
-            DrawContainer();
+            base.Draw();
             // Получаем объект Graphics из PictureBox
             Graphics graphics = pictureBox.CreateGraphics();
 
@@ -79,9 +47,5 @@ namespace _3_Задание_13Вариант
             graphics.DrawEllipse(pen,(float)x,(float)y,(float)_radius * 2, (float)_radius * 2);
         }     
 
-        public override void Rotate(double angle)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

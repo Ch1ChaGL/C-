@@ -18,18 +18,14 @@ namespace _3_Задание_13Вариант
         protected double height;
         protected RectangleF rectangleF;
         protected PictureBox pictureBox;
+        protected double angle = 0;
 
-        protected Figure(PictureBox pictureBox, RectangleF rectangleF, double x, double y, double width, double height)
+        protected Figure(PictureBox pictureBox, RectangleF rectangleF, double x, double y)
         {
-            if (!figureInContainer(rectangleF, x, y, width, height))
-            {
-                throw new ArgumentException("Figure does not fit inside the container rectangle.");
-            }
+            
 
-            this.x = x; 
-            this.y = y; 
-            this.width = width; 
-            this.height = height;
+            this.x = rectangleF.X + x; 
+            this.y = rectangleF.Y + y; 
             this.rectangleF = rectangleF;
             this.pictureBox = pictureBox;
         }
@@ -58,7 +54,12 @@ namespace _3_Задание_13Вариант
         /// </summary>
         /// <param name="pictureBox">Место вывода - PictureBox</param>
         /// <param name="rectangleF">Область вывода - RectangleF</param>
-        public abstract void Draw();
+        public virtual void Draw()
+        {
+            pictureBox.Refresh();
+            DrawContainer();
+        }
+        
 
         /// <summary>
         /// Перемещение фигуры
@@ -80,7 +81,12 @@ namespace _3_Задание_13Вариант
         /// Поворот фигуры на заданый угол
         /// </summary>
         /// <param name="angle">угол</param>
-        public abstract void Rotate(double angle);
+        public void Rotate(double angle)
+        {
+            angle = (angle + this.angle) % 360; // добавляем угол поворота к текущему углу
+            this.angle = angle;
+            Draw();
+        }
 
 
 
