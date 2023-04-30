@@ -23,7 +23,7 @@ namespace _3_Задание_13Вариант
         {
             this.width = width;
             this.height = height;
-            if (!figureInContainer(rectangleF, x, y, width, height))
+            if (!figureInContainer(rectangleF, this.x, this.y, width, height))
             {
                 throw new ArgumentException("Figure does not fit inside the container rectangle.");
             }

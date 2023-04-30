@@ -39,7 +39,7 @@ namespace _3_Задание_13Вариант
             height = GetTriangleHeight(BC);
 
 
-            if (!figureInContainer(rectangleF, x, y, width, height))
+            if (!figureInContainer(rectangleF, this.x, this.y, width, height))
             {
                 throw new ArgumentException("Figure does not fit inside the container rectangle.");
             }
@@ -50,25 +50,21 @@ namespace _3_Задание_13Вариант
             AB = Math.Sqrt(Math.Pow(B.X - A.X, 2) + Math.Pow(B.Y - A.Y, 2));
             BC = Math.Sqrt(Math.Pow(C.X - B.X, 2) + Math.Pow(C.Y - B.Y, 2));
             CA = Math.Sqrt(Math.Pow(A.X - C.X, 2) + Math.Pow(A.Y - C.Y, 2));
-            
-            if (AB + BC <= CA || AB + CA <= BC || BC + CA <= AB)
-            {
-                throw new ArgumentException("Triangle with such sides does not exist.");
-            }
+
         }
 
 
         private double GetTriangleWidth(double baseLine)
         {
             double S = Area();
-            return 2.0 * S / baseLine;
+            return (2.0 * S / baseLine) is double.NaN ? 0 : (2.0 * S / baseLine);
         }
         private double GetTriangleHeight(double baseLine)
         {
             double p = (AB + BC + CA) / 2.0;
             double S = Area();
 
-            return 2.0 * S / CA;
+            return (2.0 * S / CA ) is double.NaN ? 0 : (2.0 * S / CA);
         }
 
         public override void Draw()

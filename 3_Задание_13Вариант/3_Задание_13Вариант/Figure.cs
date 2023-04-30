@@ -96,8 +96,7 @@ namespace _3_Задание_13Вариант
         /// <returns></returns>
         public abstract double Area();
 
-
-
+    
         //Перегрузка методов сравнения
         public static bool operator > (Figure a, Figure b)
         {
@@ -114,6 +113,15 @@ namespace _3_Задание_13Вариант
         public static bool operator <=(Figure a, Figure b)
         {
             return a.Area() <= b.Area();
+        }
+
+        public static bool operator ==(Figure a, Figure b)
+        {
+            return a.Area() == b.Area();
+        }
+        public static bool operator !=(Figure a, Figure b)
+        {
+            return a.Area() == b.Area();
         }
     }
 }
