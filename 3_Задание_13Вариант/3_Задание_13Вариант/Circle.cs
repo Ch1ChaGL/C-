@@ -14,22 +14,10 @@ namespace _3_Задание_13Вариант
         double _radius;
         public Circle(
             PictureBox pictureBox,
-            RectangleF rectangleF,
-            double x, 
-            double y,  
-            double radius
+            RectangleF rectangleF
             ) 
-            : base(pictureBox,rectangleF,x,y)
+            : base(pictureBox,rectangleF)
         {
-
-            _radius = radius;
-            width = radius * 2;
-            height = radius * 2;
-            if (!figureInContainer(rectangleF, this.x, this.y, width, height))
-            {
-                throw new ArgumentException("Figure does not fit inside the container rectangle.");
-            }
-
         }
 
         public override double Area()
@@ -59,8 +47,8 @@ namespace _3_Задание_13Вариант
             SolidBrush brush = new SolidBrush(Color.Blue);
 
             // вычисляем координаты центра круга
-            int centerX = (int)(x + _radius);
-            int centerY = (int)(y + _radius);
+            int centerX = (int)(rectangleF.X + rectangleF.Width / 2);
+            int centerY = (int)(rectangleF.Y + rectangleF.Height / 2);
 
             // создаем матрицу поворота вокруг центра круга
             Matrix transformMatrix = new Matrix();
@@ -70,10 +58,10 @@ namespace _3_Задание_13Вариант
             graphics.Transform = transformMatrix;
 
             // рисуем закрашенную половину круга
-            graphics.FillPie(brush, (float)x, (float)y, (float)_radius * 2, (float)_radius * 2, 270, 180);
+            graphics.FillPie(brush, (float)rectangleF.X, (float)rectangleF.Y, (float)rectangleF.Width, (float)rectangleF.Height, 270, 180);
 
             // рисуем оставшуюся часть круга
-            graphics.DrawEllipse(pen, (float)x, (float)y, (float)_radius * 2, (float)_radius * 2);
+            graphics.DrawEllipse(pen, (float)rectangleF.X, (float)rectangleF.Y, (float)rectangleF.Width, (float)rectangleF.Height);
 
         }
 

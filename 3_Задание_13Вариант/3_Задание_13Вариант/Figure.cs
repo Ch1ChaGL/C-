@@ -11,27 +11,22 @@ namespace _3_Задание_13Вариант
     internal abstract class Figure
     {
 
-
-        protected double x;
-        protected double y;
+        protected float x;
+        protected float y;
         protected double width;
         protected double height;
         protected RectangleF rectangleF;
         protected PictureBox pictureBox;
         protected double angle = 0;
 
-        protected Figure(PictureBox pictureBox, RectangleF rectangleF, double x, double y)
-        {
-            
-
-            this.x = rectangleF.X + x; 
-            this.y = rectangleF.Y + y; 
+        protected Figure(PictureBox pictureBox, RectangleF rectangleF)
+        {            
             this.rectangleF = rectangleF;
             this.pictureBox = pictureBox;
         }
 
         /// <summary>
-        /// Отрисовка контэйнера фигуры
+        /// Отрисовка контейнера фигуры
         /// </summary>
         public void DrawContainer()
         {
@@ -57,7 +52,7 @@ namespace _3_Задание_13Вариант
         public virtual void Draw()
         {
             pictureBox.Refresh();
-            DrawContainer();
+           //DrawContainer();
         }
         
 
@@ -72,7 +67,7 @@ namespace _3_Задание_13Вариант
             x += dx;
             y += dy;
             pictureBox.Refresh();
-            DrawContainer();
+            //DrawContainer();
             Draw();
         }
 

@@ -12,11 +12,8 @@ namespace _3_Задание_13Вариант
     {
         public Square(
             PictureBox pictureBox,
-            RectangleF rectangleF,
-            double x,
-            double y,
-            double side
+            RectangleF rectangleF
             ) :
-            base(pictureBox, rectangleF, x, y, side, side) { }     
+            base(pictureBox, rectangleF) { }     
     }
 }

@@ -19,30 +19,20 @@ namespace _3_Задание_13Вариант
         double CA;
         public Triangle(
             PictureBox pictureBox, 
-            RectangleF rectangleF, 
-            int x, 
-            int y, 
-            Point a, 
-            Point b,
-            Point c
+            RectangleF rectangleF  
             ) 
-            : base(pictureBox, rectangleF, x, y)
+            : base(pictureBox, rectangleF)
         {
-            this.a = new Point(a.X + x, a.Y +y);
-            this.b = new Point(b.X + x, b.Y + y);
-            this.c = new Point(c.X + x, c.Y + y);
+            a = new Point((int)rectangleF.X, (int)(rectangleF.Y+rectangleF.Height));
+            b = new Point((int)(rectangleF.X + rectangleF.Width/2), (int)rectangleF.Y);
+            c = new Point((int)(rectangleF.X+ rectangleF.Width), (int)(rectangleF.Y + rectangleF.Height));
 
 
             FindDistances(a, b, c, out AB, out BC, out CA);
 
-            width = GetTriangleWidth(BC);
-            height = GetTriangleHeight(BC);
+            width = rectangleF.Width;
+            height = rectangleF.Height;
 
-
-            if (!figureInContainer(rectangleF, this.x, this.y, width, height))
-            {
-                throw new ArgumentException("Figure does not fit inside the container rectangle.");
-            }
         }
 
         public void FindDistances(Point A, Point B, Point C, out double AB, out double BC, out double CA)

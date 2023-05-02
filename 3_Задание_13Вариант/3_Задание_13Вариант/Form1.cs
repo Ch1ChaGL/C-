@@ -24,10 +24,7 @@ namespace _3_Задание_13Вариант
         public Form1()
         {
             InitializeComponent();
-            circle = new Circle(pictureBox1, new RectangleF(1, 1, 1, 1), 0, 0, 0);
-            triangle = new Triangle(pictureBox1, new RectangleF(1, 1, 1, 1), 0, 0, new Point(0,0), new Point(0,0) , new Point(0,0));
-            square = new Square(pictureBox1, new RectangleF(1, 1, 1, 1), 0, 0, 0);
-            rectangle = new Rectangle(pictureBox1, new RectangleF(1, 1, 1, 1), 0, 0, 0, 0);
+            
         }
         
     
@@ -39,89 +36,8 @@ namespace _3_Задание_13Вариант
 
         Figure figureA;
         Figure figureB;
+        Figure currentFigure;
         
-        private void drawCircle_Click(object sender, EventArgs e)
-        {
-            double _radius = double.Parse(radius.Text);
-            double x = double.Parse(xCircle.Text);
-            double y = double.Parse(yCircle.Text);
-
-            containerX = float.Parse(xContainer.Text);
-            containerY = float.Parse(yContainer.Text);
-
-            containerWidth = float.Parse(widthContainer.Text);
-            containerHeight = float.Parse(heightContainer.Text);
-
-            circle = new Circle(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight), x, y, _radius);
-            circle.Draw();
-        }
-        private void drawTriangle_Click(object sender, EventArgs e)
-        {
-            int Ax = int.Parse(xA.Text);
-            int Ay = int.Parse(yA.Text);
-
-            int Bx = int.Parse(xB.Text);
-            int By = int.Parse(yB.Text);
-
-            int Cx = int.Parse(xC.Text);
-            int Cy = int.Parse(yC.Text);
-
-            double x = double.Parse(xTriangle.Text);
-            double y = double.Parse(yTriangle.Text);
-
-            containerX = float.Parse(xContainer.Text);
-            containerY = float.Parse(yContainer.Text);
-
-            containerWidth = float.Parse(widthContainer.Text);
-            containerHeight = float.Parse(heightContainer.Text);
-
-
-            triangle = new Triangle(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight),
-               (int)x, (int)y, new Point(Ax, Ay), new Point(Bx, By), new Point(Cx, Cy));
-
-            triangle.Draw();
-        }
-        private void drawSquare_Click(object sender, EventArgs e)
-        {
-            double side = double.Parse(sideSquare.Text);
-
-            double x = double.Parse(xSquare.Text);
-            double y = double.Parse(ySquare.Text);
-
-
-
-            containerX = float.Parse(xContainer.Text);
-            containerY = float.Parse(yContainer.Text);
-
-            containerWidth = float.Parse(widthContainer.Text);
-            containerHeight = float.Parse(heightContainer.Text);
-            
-            square = new Square(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight), x, y, side);
-
-            square.Draw();
-        }
-        private void drawRectangle_Click(object sender, EventArgs e)
-        {
-            double width = double.Parse(widthRectangle.Text);
-            double height = double.Parse(heightRectangle.Text);
-
-
-            double x = double.Parse(xRectangle.Text);
-            double y = double.Parse(yRectangle.Text);
-
-
-
-            containerX = float.Parse(xContainer.Text);
-            containerY = float.Parse(yContainer.Text);
-
-            containerWidth = float.Parse(widthContainer.Text);
-            containerHeight = float.Parse(heightContainer.Text);
-
-            rectangle = new Rectangle(pictureBox1, 
-                new RectangleF(containerX, containerY, containerWidth, containerHeight), x,y,width, height);
-
-            rectangle.Draw();
-        }
 
         private void compare_Click(object sender, EventArgs e)
         {
@@ -194,81 +110,54 @@ namespace _3_Задание_13Вариант
 
         private void xContainer_TextChanged(object sender, EventArgs e)
         {
-            if (xContainer.Text != "" && yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "")
-            {
-                drawCircle.Enabled = radius.Text != "" && yCircle.Text != "" && xCircle.Text != "" && xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";
-
-                drawSquare.Enabled = sideSquare.Text != "" && ySquare.Text != "" && xSquare.Text != "" && xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";
-
-                drawRectangle.Enabled = heightRectangle.Text != "" &&
-                widthRectangle.Text != "" &&
-                xRectangle.Text != "" &&
-                yRectangle.Text != "" &&
-                 xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";
-
-                drawTriangle.Enabled =
-                xA.Text != "" &&
-                yA.Text != "" &&
-                xB.Text != "" &&
-                yB.Text != "" &&
-                xB.Text != "" &&
-                yC.Text != "" &&
-                xC.Text != "" &&
-                xTriangle.Text != "" &&
-                yTriangle.Text != "" &&
-                xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";
-            }
-            else
-            {
-                containerField = false;
-                drawCircle.Enabled = false;
-                drawRectangle.Enabled = false;
-                drawSquare.Enabled = false;
-                drawTriangle.Enabled = false;
-            }
+            
                 
         }
 
-        private void radius_TextChanged(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            drawCircle.Enabled = radius.Text != "" && yCircle.Text != "" && xCircle.Text != "" && xContainer.Text != "" && 
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";
+            currentFigure.Rotate(int.Parse(rotateAngle.Text));
         }
 
-        private void sideSquare_TextChanged(object sender, EventArgs e)
+        private void draw_Click(object sender, EventArgs e)
         {
-            drawSquare.Enabled = sideSquare.Text != "" && ySquare.Text != "" && xSquare.Text != "" && xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";          
-        }
 
-        private void heightRectangle_TextChanged(object sender, EventArgs e)
-        {
-            drawRectangle.Enabled = heightRectangle.Text != "" &&
-                widthRectangle.Text != "" &&
-                xRectangle.Text != "" &&
-                yRectangle.Text != "" &&
-                 xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";                 
-        }
+            containerX = float.Parse(xContainer.Text);
+            containerY = float.Parse(yContainer.Text);
+            containerWidth = float.Parse(widthContainer.Text);
+            containerHeight = float.Parse(heightContainer.Text);
+            if (drawCircle.Checked == true)
+            {
+                circle = new Circle(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight));
+                circle.Draw();
 
-        private void xA_TextChanged(object sender, EventArgs e)
-        {
-            drawTriangle.Enabled = 
-                xA.Text != "" &&
-                yA.Text != "" &&
-                xB.Text != "" &&
-                yB.Text != "" &&
-                xB.Text != "" &&
-                yC.Text != "" &&
-                xC.Text != "" &&
-                xTriangle.Text != "" &&
-                yTriangle.Text != "" &&
-                xContainer.Text != "" &&
-                yContainer.Text != "" && widthContainer.Text != "" && heightContainer.Text != "";            
+                currentFigure = circle;
+            }
+            else if(drawTriangle.Checked == true)
+            {
+                triangle = new Triangle(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight));
+                triangle.Draw();
+
+
+                currentFigure = triangle;
+            }
+            else if(rectangleDraw.Checked == true)
+            {
+                rectangle = new Rectangle(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight));
+                rectangle.Draw();
+
+                currentFigure = rectangle;
+            }
+            else if(drawSquare.Checked == true)
+            {
+                square = new Square(pictureBox1, new RectangleF(containerX, containerY, containerWidth, containerHeight));
+                square.Draw();
+
+                currentFigure = square;
+            }
+           
         }
     }
 }
