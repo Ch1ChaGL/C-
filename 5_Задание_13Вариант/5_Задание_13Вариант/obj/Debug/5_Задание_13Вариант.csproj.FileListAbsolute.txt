@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\bin\Debug\5_Задание_13Вариант.exe.config
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\bin\Debug\5_Задание_13Вариант.exe
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\bin\Debug\5_Задание_13Вариант.pdb
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\_5_Задание_13Вариант.Properties.Resources.resources
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.exe
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\5_Задание_13Вариант.pdb
+C:\Users\User\Desktop\Практика c#\5_Задание_13Вариант\5_Задание_13Вариант\obj\Debug\_5_Задание_13Вариант.Form1.resources
