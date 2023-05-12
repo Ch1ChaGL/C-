@@ -86,7 +86,7 @@ namespace _7_Задание_13Вариант
             FileStream fw  = null;
             try
             {
-                fw = new FileStream(fileName, FileMode.Open);
+                fw = new FileStream(fileName, FileMode.Append);
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(fw, this);
             }
@@ -128,6 +128,82 @@ namespace _7_Задание_13Вариант
             
         }
 
+        public static bool DeleteRecord(string fileName, long recordPosition)
+        {
+            bool success = false;
+            if (recordPosition == -1) return false;
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            // Открываем файл и перемещаемся на заданную позицию
+            using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            {
+                fs.Seek(recordPosition, SeekOrigin.Begin);
+
+                // Считываем запись, которую нужно удалить
+                ComputerGame game = (ComputerGame)formatter.Deserialize(fs);
+
+                // Вычисляем длину записи в байтах
+                long recordLength = fs.Position - recordPosition;
+
+                // Устанавливаем позицию на начало удаляемой записи и перемещаем указатель в конец записи
+                fs.Seek(recordPosition, SeekOrigin.Begin);
+                fs.Seek(recordLength, SeekOrigin.Current);
+
+                // Считываем остаток файла, начиная со следующей за удаляемой записью позиции
+                byte[] buffer = new byte[fs.Length - fs.Position];
+                fs.Read(buffer, 0, buffer.Length);
+
+                // Перемещаем указатель в начало удаляемой записи и перезаписываем файл без этой записи
+                fs.Seek(recordPosition, SeekOrigin.Begin);
+                fs.Write(buffer, 0, buffer.Length);
+
+                // Обрезаем файл до новой длины
+                fs.SetLength(fs.Position);
+
+                success = true;
+            }
+
+            return success;
+        }
+
+
+        public static List<ComputerGame> ReadGamesFromFile(string filePath, List<long> positions)
+        {
+            List<ComputerGame> games = new List<ComputerGame>();
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                foreach (int pos in positions)
+                {
+                    fs.Seek(pos, SeekOrigin.Begin);
+
+                    ComputerGame game = (ComputerGame)bf.Deserialize(fs);
+                    games.Add(game);
+                }
+            }
+
+            return games;
+        }
+
+
+        public static List<ComputerGame> ReadGamesFromFile(string filePath, long positions)
+        {
+            List<ComputerGame> games = new List<ComputerGame>();
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                fs.Seek(positions, SeekOrigin.Begin);
+
+                ComputerGame game = (ComputerGame)bf.Deserialize(fs);
+                games.Add(game);  
+            }
+
+            return games;
+        }
+
+
         /// <summary>
         /// Загрузка данных из бинарного файла в динамический список объектов;
         /// </summary>
@@ -158,28 +234,23 @@ namespace _7_Задание_13Вариант
             return result;
         }
 
-        public class SortByCPU : IComparer
+        public class SortByCPU : IComparer<ComputerGame>
         {
-            int IComparer.Compare(object x, object y)
+            public int Compare(ComputerGame x, ComputerGame y)
             {
-                ComputerGame temp1 = (ComputerGame)x;
-                ComputerGame temp2 = (ComputerGame)y;
 
-                if (temp1.CPU > temp2.CPU) return 1;
-                if (temp1.CPU < temp2.CPU) return -1;
+                if (x.CPU > y.CPU) return 1;
+                if (x.CPU < y.CPU) return -1;
                 return 0;
             }
         }
 
-        public class SortByMemory : IComparer
-        {
-            int IComparer.Compare(object x, object y)
+        public class SortByMemory : IComparer<ComputerGame>
+        {           
+            public int Compare(ComputerGame x, ComputerGame y)
             {
-                ComputerGame temp1 = (ComputerGame)x;
-                ComputerGame temp2 = (ComputerGame)y;
-
-                if (temp1.Memory > temp2.Memory) return 1;
-                if (temp1.Memory< temp2.Memory) return -1;
+                if (x.Memory > y.Memory) return 1;
+                if (x.Memory < y.Memory) return -1;
                 return 0;
             }
         }
@@ -248,6 +319,47 @@ namespace _7_Задание_13Вариант
         }
 
 
+        public static List<long> FindByMemoryDiapazon(string fileName, double start, double end)
+        {
+            List<long> positions = new List<long>();
+            using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                long position = 0;
+                while (position < fs.Length)
+                {
+                    fs.Seek(position, SeekOrigin.Begin);
+                    ComputerGame game = (ComputerGame)formatter.Deserialize(fs);
+                    if (game.Memory >= start && game.Memory <= end)
+                    {
+                        positions.Add(position);
+                    }
+                    position = fs.Position;
+                }
+                return positions;
+            }
+        }
 
+
+        public static List<long> FindByCPUDiapazon(string fileName, double start, double end)
+        {
+            List<long> positions = new List<long>();
+            using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                long position = 0;
+                while (position < fs.Length)
+                {
+                    fs.Seek(position, SeekOrigin.Begin);
+                    ComputerGame game = (ComputerGame)formatter.Deserialize(fs);
+                    if (game.CPU >= start && game.CPU <= end)
+                    {
+                        positions.Add(position);
+                    }
+                    position = fs.Position;
+                }
+                return positions;
+            }
+        }
     }
 }

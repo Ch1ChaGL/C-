@@ -34,12 +34,10 @@
             this.TypeGame = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.MemorySize = new System.Windows.Forms.NumericUpDown();
-            this.CPUsize = new System.Windows.Forms.NumericUpDown();
             this.SaveFile = new System.Windows.Forms.Button();
             this.View = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.MemorySize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CPUsize)).BeginInit();
+            this.MemorySize = new System.Windows.Forms.TextBox();
+            this.CPUsize = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -104,22 +102,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Частота процессора";
             // 
-            // MemorySize
-            // 
-            this.MemorySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MemorySize.Location = new System.Drawing.Point(251, 185);
-            this.MemorySize.Name = "MemorySize";
-            this.MemorySize.Size = new System.Drawing.Size(120, 29);
-            this.MemorySize.TabIndex = 6;
-            // 
-            // CPUsize
-            // 
-            this.CPUsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CPUsize.Location = new System.Drawing.Point(251, 241);
-            this.CPUsize.Name = "CPUsize";
-            this.CPUsize.Size = new System.Drawing.Size(120, 29);
-            this.CPUsize.TabIndex = 7;
-            // 
             // SaveFile
             // 
             this.SaveFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -144,15 +126,31 @@
             this.View.UseVisualStyleBackColor = true;
             this.View.Click += new System.EventHandler(this.View_Click);
             // 
+            // MemorySize
+            // 
+            this.MemorySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MemorySize.Location = new System.Drawing.Point(271, 185);
+            this.MemorySize.Name = "MemorySize";
+            this.MemorySize.Size = new System.Drawing.Size(100, 29);
+            this.MemorySize.TabIndex = 10;
+            // 
+            // CPUsize
+            // 
+            this.CPUsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CPUsize.Location = new System.Drawing.Point(271, 237);
+            this.CPUsize.Name = "CPUsize";
+            this.CPUsize.Size = new System.Drawing.Size(100, 29);
+            this.CPUsize.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.View);
-            this.Controls.Add(this.SaveFile);
             this.Controls.Add(this.CPUsize);
             this.Controls.Add(this.MemorySize);
+            this.Controls.Add(this.View);
+            this.Controls.Add(this.SaveFile);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TypeGame);
@@ -160,9 +158,7 @@
             this.Controls.Add(this.gameName);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.MemorySize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CPUsize)).EndInit();
+            this.Text = "Работа с бинарным файлом";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,15 +167,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox gameName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox TypeGame;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown MemorySize;
-        private System.Windows.Forms.NumericUpDown CPUsize;
         private System.Windows.Forms.Button SaveFile;
         private System.Windows.Forms.Button View;
+        public System.Windows.Forms.TextBox gameName;
+        public System.Windows.Forms.ComboBox TypeGame;
+        public System.Windows.Forms.TextBox MemorySize;
+        public System.Windows.Forms.TextBox CPUsize;
     }
 }
 
