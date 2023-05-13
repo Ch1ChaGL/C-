@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -66,6 +67,30 @@ namespace _8_Задание_13Вариант
             }
         }
 
+        private void LoadDataToComboboxPorts(string q, ComboBox cmb)
+        {
+            try
+            {
+                cmb.Items.Clear();
+                SqlConnection myConnection = new SqlConnection(connString);
+                // создание соединения с БД
+                myConnection.Open();    // открываем соединение
+                SqlCommand cmd = new SqlCommand(q, myConnection);
+                // создание SQL команды с запросом
+                SqlDataAdapter da = new SqlDataAdapter(cmd);    // выполнение команды
+                DataTable tb = new DataTable(); // создание таблицы
+                da.Fill(tb);        // загрузка данных в таблицу
+                cmb.DataSource = tb;  // привязка полученной таблицы к компоненту comboBox1
+                cmb.DisplayMember = "DestinationPortName"; // значения для вывода
+                cmb.ValueMember = "DestinationPortID";   // фактические значения
+                cmb.SelectedIndex = -1;
+                myConnection.Close(); // разрываем соединение с БД
+            }
+            catch
+            {
+                MessageBox.Show("Список категорий загрузить не удалось!");
+            }
+        }
 
 
         private void LoadData(string q, DataGridView dgv)
@@ -132,6 +157,7 @@ namespace _8_Задание_13Вариант
             {
                 LoadDataToComboboxAirplaneType(SQLstring.GetInfoQueryPlaneTypes, airplaneType);
                 LoadDataToComboboxPeriodicity(SQLstring.GetNameFlightFrequency, periodicity);
+                LoadDataToComboboxPorts(SQLstring.GetNamePorts, airport);
                 LoadData(SQLstring.getAll, dataGridView1);
             }
             catch
@@ -175,9 +201,60 @@ namespace _8_Задание_13Вариант
                 timeEnd.Text = ArrivalTime.TimeOfDay.ToString();
 
                 periodicity.Text = FlightFrequency.ToString();
+                airplaneNumber.Text = PlaneId.ToString();
 
                 updatePictureBox(FlightID);
             }
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int FlightID = int.Parse(raceNumber.Text);
+                int PlaneId = int.Parse(airplaneNumber.Text);
+                int NumberOfSeats = int.Parse(countPasanger.Text);
+
+                int PlaneType = (int)airplaneType.SelectedValue;
+
+                int DestinationPortId = (int)airport.SelectedValue;
+
+                DateTime DepartureDate = dateStart.Value.Date;
+                string DepartureTime = timeStart.Text;
+                DateTime TimeD = DateTime.ParseExact(DepartureTime, "HH:mm", CultureInfo.InvariantCulture);
+                int hoursD = TimeD.Hour;
+                int minutesD = TimeD.Minute;
+                DateTime DepartureDateTime = new DateTime(DepartureDate.Year, DepartureDate.Month, DepartureDate.Day, hoursD, minutesD, 0);
+               
+                DateTime ArrivalDate = dateEnd.Value.Date;
+                string ArrivalTime = timeEnd.Text;
+                DateTime TimeA = DateTime.ParseExact(ArrivalTime, "HH:mm", CultureInfo.InvariantCulture);
+                int hoursA = TimeA.Hour;
+                int minutesA = TimeA.Minute;
+                DateTime ArrivalDateTime = new DateTime(ArrivalDate.Year, ArrivalDate.Month, ArrivalDate.Day, hoursA, minutesA, 0);
+
+                int FlightFrequencyId = (int)periodicity.SelectedValue;
+
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand(SQLstring.addFlight(FlightID, PlaneId, PlaneType, NumberOfSeats,
+                        DestinationPortId, DepartureDateTime, ArrivalDateTime, FlightFrequencyId), connection))
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message); 
+            }
+            LoadData(SQLstring.getAll, dataGridView1);
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

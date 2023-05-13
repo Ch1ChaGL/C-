@@ -16,5 +16,14 @@ namespace _8_Задание_13Вариант
         {
             return $"select PT.PlaneImage from Flights F join Planes P on F.PlaneID = P.PlaneID join PlaneTypes PT on P.PlaneTypeID = PT.PlaneTypeID where FlightID = {id}";
         }
+        public static string GetNamePorts = "select * from Ports";
+
+        public static string addFlight(int FlightID, int PlaneId, int PlaneTypeId, int NumberOfSeats,int DestinationPortId,DateTime DepartureDate,
+            DateTime ArrivalDate, int FlightFrequencyId)
+        {
+
+            return $"exec AddFlightProcedure {FlightID}, {PlaneId}, {PlaneTypeId}, {NumberOfSeats}, {DestinationPortId}, '{DepartureDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{ArrivalDate.ToString("yyyy-MM-dd HH:mm:ss")}', {FlightFrequencyId}";
+        }
+
     }
 }
