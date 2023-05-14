@@ -32,6 +32,9 @@
             this.raceNumber2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.airport = new System.Windows.Forms.ComboBox();
+            this.airplaneNumber = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.newTypeAirplane = new System.Windows.Forms.Button();
             this.newTypeFlightFrequency = new System.Windows.Forms.Button();
             this.timeEnd = new System.Windows.Forms.MaskedTextBox();
@@ -57,9 +60,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.airplaneNumber = new System.Windows.Forms.TextBox();
-            this.airport = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -123,6 +123,33 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные";
+            // 
+            // airport
+            // 
+            this.airport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.airport.FormattingEnabled = true;
+            this.airport.Location = new System.Drawing.Point(134, 173);
+            this.airport.Name = "airport";
+            this.airport.Size = new System.Drawing.Size(298, 24);
+            this.airport.TabIndex = 28;
+            // 
+            // airplaneNumber
+            // 
+            this.airplaneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.airplaneNumber.Location = new System.Drawing.Point(128, 69);
+            this.airplaneNumber.Name = "airplaneNumber";
+            this.airplaneNumber.Size = new System.Drawing.Size(304, 22);
+            this.airplaneNumber.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(6, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Номер самолета";
             // 
             // newTypeAirplane
             // 
@@ -334,7 +361,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(875, 306);
+            this.button4.Location = new System.Drawing.Point(875, 290);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 37);
             this.button4.TabIndex = 8;
@@ -345,7 +372,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.Crimson;
-            this.button5.Location = new System.Drawing.Point(875, 357);
+            this.button5.Location = new System.Drawing.Point(875, 342);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 37);
             this.button5.TabIndex = 9;
@@ -366,33 +393,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(963, 314);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(6, 69);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 16);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Номер самолета";
-            // 
-            // airplaneNumber
-            // 
-            this.airplaneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.airplaneNumber.Location = new System.Drawing.Point(128, 69);
-            this.airplaneNumber.Name = "airplaneNumber";
-            this.airplaneNumber.Size = new System.Drawing.Size(304, 22);
-            this.airplaneNumber.TabIndex = 27;
-            // 
-            // airport
-            // 
-            this.airport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.airport.FormattingEnabled = true;
-            this.airport.Location = new System.Drawing.Point(134, 173);
-            this.airport.Name = "airport";
-            this.airport.Size = new System.Drawing.Size(298, 24);
-            this.airport.TabIndex = 28;
             // 
             // Form1
             // 
