@@ -22,7 +22,7 @@ namespace _8_Задание_13Вариант
         {
             try
             {
-                cmb.Items.Clear();
+                //cmb.Items.Clear();
                 SqlConnection myConnection = new SqlConnection(connString);
                 // создание соединения с БД
                 myConnection.Open();    // открываем соединение
@@ -40,7 +40,7 @@ namespace _8_Задание_13Вариант
             catch
             {
                 MessageBox.Show("Список категорий загрузить не удалось!");
-            }
+            }          
         }
         private void LoadDataToComboboxPeriodicity(string q, ComboBox cmb)
         {
@@ -146,7 +146,31 @@ namespace _8_Задание_13Вариант
             }
         }
 
+        public void updatePictureBox2(int typeId)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                string query = SQLstring.GetImageType(typeId);
+                SqlCommand command = new SqlCommand(query, connection);
 
+                try
+                {
+                    connection.Open();
+                    byte[] imageBytes = (byte[])command.ExecuteScalar();
+                    if (imageBytes != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        {
+                            pictureBox1.Image = Image.FromStream(ms);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
 
 
         public Form1()
@@ -237,7 +261,7 @@ namespace _8_Задание_13Вариант
 
                 using (SqlConnection connection = new SqlConnection(connString))
                 {
-                    using (SqlCommand command = new SqlCommand(SQLstring.addFlight(FlightID, PlaneId, PlaneType, NumberOfSeats,
+                    using (SqlCommand command = new SqlCommand(SQLstring.addFlight(FlightID, PlaneId, PlaneType,
                         DestinationPortId, DepartureDateTime, ArrivalDateTime, FlightFrequencyId), connection))
                     {
                         connection.Open();
@@ -253,6 +277,199 @@ namespace _8_Задание_13Вариант
         }
 
         private void change_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int FlightID = int.Parse(raceNumber.Text);
+                int PlaneId = int.Parse(airplaneNumber.Text);
+                int NumberOfSeats = int.Parse(countPasanger.Text);
+
+                int PlaneType = (int)airplaneType.SelectedValue;
+
+                int DestinationPortId = (int)airport.SelectedValue;
+
+                DateTime DepartureDate = dateStart.Value.Date;
+                string DepartureTime = timeStart.Text;
+                DateTime TimeD = DateTime.ParseExact(DepartureTime, "HH:mm", CultureInfo.InvariantCulture);
+                int hoursD = TimeD.Hour;
+                int minutesD = TimeD.Minute;
+                DateTime DepartureDateTime = new DateTime(DepartureDate.Year, DepartureDate.Month, DepartureDate.Day, hoursD, minutesD, 0);
+
+                DateTime ArrivalDate = dateEnd.Value.Date;
+                string ArrivalTime = timeEnd.Text;
+                DateTime TimeA = DateTime.ParseExact(ArrivalTime, "HH:mm", CultureInfo.InvariantCulture);
+                int hoursA = TimeA.Hour;
+                int minutesA = TimeA.Minute;
+                DateTime ArrivalDateTime = new DateTime(ArrivalDate.Year, ArrivalDate.Month, ArrivalDate.Day, hoursA, minutesA, 0);
+
+                int FlightFrequencyId = (int)periodicity.SelectedValue;
+
+
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand(SQLstring.updateFlight(FlightID, PlaneId, PlaneType, 
+                        DestinationPortId, DepartureDateTime, ArrivalDateTime, FlightFrequencyId), connection)) 
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            LoadData(SQLstring.getAll, dataGridView1);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            airplaneType.SelectedIndexChanged += airplaneType_SelectedIndexChanged;
+        }
+
+        private void airplaneType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int PlaneType =airplaneType.SelectedValue == null ? 1 : (int)airplaneType.SelectedValue;
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand($"select NumberOfSeats from PlaneTypes where PlaneTypeId = {PlaneType}", connection))
+                    {
+                        connection.Open();
+                        var res = command.ExecuteScalar();
+
+                        countPasanger.Text = res.ToString();
+                    }
+                    updatePictureBox2(PlaneType);
+                }
+            }
+            catch(Exception ex) 
+            {
+
+            }
+            
+        }
+
+        private void del_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand($"select * from Flights where FlightID = {int.Parse(raceNumber.Text)} ", connection))
+                    {
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (!reader.HasRows) throw new Exception("Данный рейс отсутсвует");
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand($"delete from Flights where FlightID = {int.Parse(raceNumber.Text)} ", connection))
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            LoadData(SQLstring.getAll, dataGridView1);
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            LoadData(SQLstring.getAll, dataGridView1);
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+
+            int FlightID = int.Parse(raceNumber.Text);
+            int PlaneId = int.Parse(airplaneNumber.Text);
+            int NumberOfSeats = int.Parse(countPasanger.Text);
+
+            int PlaneType = (int)airplaneType.SelectedValue;
+
+            int DestinationPortId = (int)airport.SelectedValue;
+
+            DateTime DepartureDate = dateStart.Value.Date;
+            string DepartureTime = timeStart.Text;
+            DateTime TimeD = DateTime.ParseExact(DepartureTime, "HH:mm", CultureInfo.InvariantCulture);
+            int hoursD = TimeD.Hour;
+            int minutesD = TimeD.Minute;
+            DateTime DepartureDateTime = new DateTime(DepartureDate.Year, DepartureDate.Month, DepartureDate.Day, hoursD, minutesD, 0);
+
+            DateTime ArrivalDate = dateEnd.Value.Date;
+            string ArrivalTime = timeEnd.Text;
+            DateTime TimeA = DateTime.ParseExact(ArrivalTime, "HH:mm", CultureInfo.InvariantCulture);
+            int hoursA = TimeA.Hour;
+            int minutesA = TimeA.Minute;
+            DateTime ArrivalDateTime = new DateTime(ArrivalDate.Year, ArrivalDate.Month, ArrivalDate.Day, hoursA, minutesA, 0);
+
+            int FlightFrequencyId = (int)periodicity.SelectedValue;
+
+
+            DataTable dt = new DataTable();
+            dt = searchFn(SQLstring.getAllOne(FlightID, PlaneId, DestinationPortId, DepartureDateTime, ArrivalDateTime, FlightFrequencyId), dt);
+            dt = searchFn(SQLstring.getAllSeven(FlightID), dt);
+            dt = searchFn(SQLstring.getAllTwo(PlaneId, DestinationPortId, DepartureDateTime, ArrivalDateTime, FlightFrequencyId), dt);
+            dt = searchFn(SQLstring.getAllTrhee(PlaneId), dt);
+            dt = searchFn(SQLstring.getAllFour(DepartureDateTime, ArrivalDateTime), dt);
+            dt = searchFn(SQLstring.getAllFive(DepartureDateTime), dt);
+            dt = searchFn(SQLstring.getAllFive(ArrivalDate), dt);
+
+            // представление для DataTable
+            DataView view = new DataView(dt);
+
+            // свойство Distinct, чтобы удалить дублирующиеся строки
+            DataTable distinctTable = view.ToTable(true);
+
+            dataGridView1.DataSource = distinctTable;
+            dataGridView1.Refresh();
+        }
+
+
+        public DataTable searchFn(string sql, DataTable dataTable)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            connection.Open();
+                            adapter.Fill(dataTable);
+                            return dataTable;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+           
+        }
+
+        private void newTypeAirplane_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            Visible = false;
+            form.ShowDialog();
+            Visible = true;
+            LoadDataToComboboxAirplaneType(SQLstring.GetInfoQueryPlaneTypes, airplaneType);
+        }
+
+        private void airplaneType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

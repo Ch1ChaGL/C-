@@ -36,7 +36,6 @@
             this.airplaneNumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.newTypeAirplane = new System.Windows.Forms.Button();
-            this.newTypeFlightFrequency = new System.Windows.Forms.Button();
             this.timeEnd = new System.Windows.Forms.MaskedTextBox();
             this.timeStart = new System.Windows.Forms.MaskedTextBox();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
@@ -56,9 +55,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.add = new System.Windows.Forms.Button();
             this.change = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.del = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -67,7 +66,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(305, 230);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +98,6 @@
             this.groupBox1.Controls.Add(this.airplaneNumber);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.newTypeAirplane);
-            this.groupBox1.Controls.Add(this.newTypeFlightFrequency);
             this.groupBox1.Controls.Add(this.timeEnd);
             this.groupBox1.Controls.Add(this.timeStart);
             this.groupBox1.Controls.Add(this.dateEnd);
@@ -159,15 +157,7 @@
             this.newTypeAirplane.TabIndex = 25;
             this.newTypeAirplane.Text = "Новый";
             this.newTypeAirplane.UseVisualStyleBackColor = true;
-            // 
-            // newTypeFlightFrequency
-            // 
-            this.newTypeFlightFrequency.Location = new System.Drawing.Point(439, 344);
-            this.newTypeFlightFrequency.Name = "newTypeFlightFrequency";
-            this.newTypeFlightFrequency.Size = new System.Drawing.Size(75, 23);
-            this.newTypeFlightFrequency.TabIndex = 24;
-            this.newTypeFlightFrequency.Text = "Новый";
-            this.newTypeFlightFrequency.UseVisualStyleBackColor = true;
+            this.newTypeAirplane.Click += new System.EventHandler(this.newTypeAirplane_Click);
             // 
             // timeEnd
             // 
@@ -236,9 +226,11 @@
             this.airplaneType.Name = "airplaneType";
             this.airplaneType.Size = new System.Drawing.Size(314, 24);
             this.airplaneType.TabIndex = 17;
+            this.airplaneType.SelectedIndexChanged += new System.EventHandler(this.airplaneType_SelectedIndexChanged_1);
             // 
             // countPasanger
             // 
+            this.countPasanger.Enabled = false;
             this.countPasanger.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.countPasanger.Location = new System.Drawing.Point(225, 131);
             this.countPasanger.Name = "countPasanger";
@@ -347,37 +339,40 @@
             this.change.UseVisualStyleBackColor = true;
             this.change.Click += new System.EventHandler(this.change_Click);
             // 
-            // button3
+            // del
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(875, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 37);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.del.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.del.ForeColor = System.Drawing.Color.Crimson;
+            this.del.Location = new System.Drawing.Point(875, 114);
+            this.del.Name = "del";
+            this.del.Size = new System.Drawing.Size(104, 37);
+            this.del.TabIndex = 7;
+            this.del.Text = "Удалить";
+            this.del.UseVisualStyleBackColor = true;
+            this.del.Click += new System.EventHandler(this.del_Click);
             // 
-            // button4
+            // search
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(875, 290);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 37);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Поиск";
-            this.button4.UseVisualStyleBackColor = true;
+            this.search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.search.Location = new System.Drawing.Point(875, 290);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(104, 37);
+            this.search.TabIndex = 8;
+            this.search.Text = "Поиск";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
             // 
-            // button5
+            // Clear
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Crimson;
-            this.button5.Location = new System.Drawing.Point(875, 342);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 37);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Сборс";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Clear.ForeColor = System.Drawing.Color.Crimson;
+            this.Clear.Location = new System.Drawing.Point(875, 342);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(104, 37);
+            this.Clear.TabIndex = 9;
+            this.Clear.Text = "Сборс";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // dataGridView1
             // 
@@ -400,9 +395,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 738);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.del);
             this.Controls.Add(this.change);
             this.Controls.Add(this.add);
             this.Controls.Add(this.groupBox1);
@@ -411,6 +406,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "База данных Аэропорта";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -438,9 +434,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button change;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.DateTimePicker dateStart;
         private System.Windows.Forms.MaskedTextBox timeStart;
         private System.Windows.Forms.DateTimePicker dateEnd;
@@ -449,7 +445,6 @@
         private System.Windows.Forms.MaskedTextBox timeEnd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button newTypeAirplane;
-        private System.Windows.Forms.Button newTypeFlightFrequency;
         private System.Windows.Forms.TextBox airplaneNumber;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox airport;

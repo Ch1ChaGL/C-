@@ -11,3 +11,4 @@ C:\Users\User\Desktop\Практика c#\8_Задание_13Вариант\8_З
 C:\Users\User\Desktop\Практика c#\8_Задание_13Вариант\8_Задание_13Вариант\obj\Debug\8_Задание_13Вариант.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Практика c#\8_Задание_13Вариант\8_Задание_13Вариант\obj\Debug\8_Задание_13Вариант.exe
 C:\Users\User\Desktop\Практика c#\8_Задание_13Вариант\8_Задание_13Вариант\obj\Debug\8_Задание_13Вариант.pdb
+C:\Users\User\Desktop\Практика c#\8_Задание_13Вариант\8_Задание_13Вариант\obj\Debug\_8_Задание_13Вариант.Form2.resources
