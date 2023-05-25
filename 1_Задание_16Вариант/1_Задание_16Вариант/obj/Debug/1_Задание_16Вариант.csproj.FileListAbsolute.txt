@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\bin\Debug\1_Задание_16Вариант.exe.config
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\bin\Debug\1_Задание_16Вариант.exe
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\bin\Debug\1_Задание_16Вариант.pdb
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\_1_Задание_16Вариант.Form1.resources
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\_1_Задание_16Вариант.Properties.Resources.resources
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.csproj.GenerateResource.cache
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.exe
+C:\Users\User\Desktop\ЕгорПашуля\1_Задание_16Вариант\1_Задание_16Вариант\obj\Debug\1_Задание_16Вариант.pdb
