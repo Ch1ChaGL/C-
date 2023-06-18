@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\bin\Debug\Химчистка.exe.config
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\bin\Debug\Химчистка.exe
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\bin\Debug\Химчистка.pdb
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.CreateOrder.resources
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.Form1.resources
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.Properties.Resources.resources
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.exe
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.pdb
+C:\Users\User\Desktop\Практика c#\Химчистка\Химчистка\obj\Debug\Химчистка.GivedOrder.resources
