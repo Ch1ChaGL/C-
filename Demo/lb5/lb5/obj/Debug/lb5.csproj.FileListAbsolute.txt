@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\лб5\lb5\lb5\bin\Debug\lb5.exe.config
+C:\Users\User\Desktop\лб5\lb5\lb5\bin\Debug\lb5.exe
+C:\Users\User\Desktop\лб5\lb5\lb5\bin\Debug\lb5.pdb
+C:\Users\User\Desktop\лб5\lb5\lb5\bin\Debug\SQL.dll
+C:\Users\User\Desktop\лб5\lb5\lb5\bin\Debug\SQL.pdb
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.Form1.resources
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.Properties.Resources.resources
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.csproj.GenerateResource.cache
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.csproj.CopyComplete
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.exe
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.pdb
+C:\Users\User\Desktop\лб5\lb5\lb5\obj\Debug\lb5.Client.ClientMainPage.resources
