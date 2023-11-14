@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lb5", "lb5\lb5.csproj", "{B9CC2666-0602-403B-8E8A-AB067BA17AEC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{843FC4E1-3746-4781-9397-CDF7621E846E} = {843FC4E1-3746-4781-9397-CDF7621E846E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLLib", "SQL\SQLLib.csproj", "{843FC4E1-3746-4781-9397-CDF7621E846E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9CC2666-0602-403B-8E8A-AB067BA17AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9CC2666-0602-403B-8E8A-AB067BA17AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9CC2666-0602-403B-8E8A-AB067BA17AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9CC2666-0602-403B-8E8A-AB067BA17AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843FC4E1-3746-4781-9397-CDF7621E846E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843FC4E1-3746-4781-9397-CDF7621E846E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843FC4E1-3746-4781-9397-CDF7621E846E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843FC4E1-3746-4781-9397-CDF7621E846E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDA70732-BB9D-4A31-AD9E-41CC91B9DCE8}
+	EndGlobalSection
+EndGlobal
